@@ -1,0 +1,96 @@
+<template>
+  <v-footer color="gray" class="pt-10 pb-10">
+    <v-container>
+      <v-row>
+        <v-col cols="10" sm="4" md="4" xl="4" class="py-0 mb-sm-8 order-3 order-sm-1 order-md-1 order-xl-1 mx-auto">
+          <v-list color="transparent">
+            <v-list-item class="justify-center">
+              <v-list-item-avatar>
+                <img src="@/assets/img/logo-kibaid.png" alt="Logo" />
+              </v-list-item-avatar>
+              <v-list-item-content class="d-block" style="flex:unset!important">
+                <v-list-item-title class="title text-uppercase primary--text font-weight-bold">Sinode
+                </v-list-item-title>
+                <v-list-item-title class="title text-uppercase primary--text font-weight-bold">Kibaid
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <span class=" mr-2 primary--text text-small d-flex justify-center">
+              © {{ new Date().getFullYear() }} — <strong>KIBAID</strong>
+            </span>
+          </v-list>
+        </v-col>
+        <v-col cols="12" sm="4" md="4" xl="4" class="order-1 order-sm-2 order-md-2 order-xl-2 mb-8">
+          <v-row>
+            <div class="primary--text text--uppercase text-h6 pl-4 mb-3">QUICK LINKS</div>
+          </v-row>
+          <v-row class="flex-column flex-wrap">
+            <v-btn class="justify-start" text @click="$vuetify.goTo('#hero')">
+              <span class="mr-2 primary--text text-capitalize">Home</span>
+            </v-btn>
+            <v-btn class="justify-start" text @click="$vuetify.goTo('#features')">
+              <span class="mr-2 primary--text text-capitalize">Tentang Kami</span>
+            </v-btn>
+            <v-btn class="justify-start" text @click="$vuetify.goTo('#church')">
+              <span class="mr-2 primary--text text-capitalize">Gereja</span>
+            </v-btn>
+            <v-btn class="justify-start" text @click="$vuetify.goTo('#news')">
+              <span class="mr-2 primary--text text-capitalize">Kabar</span>
+            </v-btn>
+            <v-btn class="justify-start" text @click="$vuetify.goTo('#contact')">
+              <span class="mr-2 primary--text text-capitalize">Kontak</span>
+            </v-btn>
+          </v-row>
+        </v-col>
+        <v-col cols="12" sm="4" md="4" xl="4" class="order-2 order-sm-3 order-md-3 order-xl-3 mb-8">
+          <v-row>
+            <div class="primary--text text--uppercase text-h6 pl-4 mb-3">KONTAK KAMI</div>
+          </v-row>
+          <v-row class="flex-column">
+            <v-btn v-for="(icon, i) in icons" :key="i" class="mx-4 primary--text justify-start text-capitalize pl-0"
+              :href="icon.link" target="_blank" text>
+              <v-icon size="24px" class="mr-2">{{ icon.text }}</v-icon>
+              {{ icon.social }}
+            </v-btn>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-footer>
+</template>
+
+<style scoped>
+.v-card {
+  width: 100%;
+}
+</style>
+
+<script>
+export default {
+  name: "FooterComp",
+  data: () => ({
+    icons: [
+      {
+        text: "mdi-instagram",
+        social: "Instagram",
+        link: "https://instagram.com/kibaid",
+      },
+      {
+        text: "mdi-facebook",
+        social: "Facebook",
+        link: "https://instagram.com/facebook",
+      },
+      {
+        text: "mdi-whatsapp",
+        social: "Whatsapp",
+        link: "",
+      },
+      {
+        text: "mdi-email",
+        social: "Email",
+        link: "",
+      },
+    ],
+  }),
+};
+</script>
