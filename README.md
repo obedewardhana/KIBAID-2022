@@ -1,14 +1,11 @@
-# Vuetify Landing Page Template
-
-#### This is an example of a landing page built with vue and vuetify.
-
+# KIBAID Website
 
 ## 🚀 Project setup
 
 Use [git](https://git-scm.com/) to clone the project.
 
 ```bash
-git clone https://github.com/Joabsonlg/vuetify-landing-page.git
+git clone https://github.com/obedewardhana/KIBAID-2022.git
 ```
 Enter the project.
 ```bash
