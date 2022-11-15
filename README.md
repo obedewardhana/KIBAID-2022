@@ -12,9 +12,8 @@ git clone https://github.com/Joabsonlg/vuetify-landing-page.git
 ```
 Enter the project.
 ```bash
-cd vuetify-landing-page
-```
 Use [npm](https://www.npmjs.com/) to install dependencies.
+```
 ```bash
 npm i
 ```
@@ -38,7 +37,6 @@ The following tools were used in the construction of the project:
 
 - [Vue.js](https://vuejs.org/)
 - [Vuetify.js](https://vuetifyjs.com/)
-- [Firebase](https://firebase.google.com/)
 
 ## ⚖️ Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -46,12 +44,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## 👷‍♂️ Author
-<a href="https://github.com/Joabsonlg">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/41306493?v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Joabson Arley</b></sub></a> <a href="https://github.com/Joabsonlg" title="Github">🚀</a>
+<a href="https://github.com/obedewardhana">
+ <sub><b>Obeth Dewa Wardhana</b></sub></a> <a href="https://github.com/obedewardhana" title="Github">🚀</a>
 
-[![Gmail Badge](https://img.shields.io/badge/-joabsonlg918@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:joabsonlg918@gmail.com)](mailto:joabsonlg918@gmail.com)
 
-## 🔑 License
-[MIT](https://github.com/Joabsonlg/vuetify-landing-page/blob/master/LICENSE)
+
+
