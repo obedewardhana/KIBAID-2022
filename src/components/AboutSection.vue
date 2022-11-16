@@ -11,11 +11,11 @@
               </h1>
               <v-row>
                 <v-col cols="12" class="d-flex align-center">
-                  <v-img
+                  <!-- <v-img
                     src="@/assets/img/icon1.svg"
                     max-width="60px"
                     class="mr-4"
-                  />
+                  /> -->
                   <p class="text-justify">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -23,11 +23,11 @@
                   </p>
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
-                  <v-img
+                  <!-- <v-img
                     src="@/assets/img/icon2.svg"
                     max-width="60px"
                     class="mr-4"
-                  />
+                  /> -->
                   <p class="text-justify">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -35,11 +35,11 @@
                   </p>
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
-                  <v-img
+                  <!-- <v-img
                     src="@/assets/img/icon3.svg"
                     max-width="60px"
                     class="mr-4"
-                  />
+                  /> -->
                   <p class="text-justify">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.

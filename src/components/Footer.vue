@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="10" sm="4" md="4" xl="4" class="py-0 mb-sm-8 order-3 order-sm-1 order-md-1 order-xl-1 mx-auto">
           <v-list color="transparent">
-            <v-list-item class="justify-center">
+            <v-list-item class="justify-center justify-md-start justify-xl-start">
               <v-list-item-avatar>
                 <img src="@/assets/img/logo-kibaid.png" alt="Logo" />
               </v-list-item-avatar>
@@ -15,9 +15,11 @@
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <span class=" mr-2 primary--text text-small d-flex justify-center">
-              © {{ new Date().getFullYear() }} — <strong>KIBAID</strong>
-            </span>
+            <v-list-item class="justify-center justify-md-start justify-xl-start">
+              <span class=" mr-2 primary--text text-small">
+                © {{ new Date().getFullYear() }} — <strong>KIBAID</strong>
+              </span>
+            </v-list-item>
           </v-list>
         </v-col>
         <v-col cols="12" sm="4" md="4" xl="4" class="order-1 order-sm-2 order-md-2 order-xl-2 mb-8">

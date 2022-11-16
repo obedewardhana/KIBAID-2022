@@ -21,11 +21,24 @@
         </v-row>
       </v-overlay>
     </v-parallax>
-    <v-container fluid id="features" class="mt-2">
+    <v-container id="features" class="mt-2">
       <v-row align="center" justify="center">
         <v-col cols="12">
-          <v-card elevation="2" outlined color="gray">
-            
+          <v-card :elevation="0" color="gray" class="py-8 px-3 overflow-hidden" tile style="margin-top:-140px;position:relative;">
+            <v-row>
+              <v-col cols="12" md="6" xl="6">
+                <v-card-title class="text-h5 font-weight-bold primary--text" style="z-index:2;position:relative;">
+                  TUJUAN KAMI
+                </v-card-title>
+                <v-card-text class="primary--text" style="z-index:2;position:relative;">
+                  <p>"Mewujudkan panggilannya untuk menyembah, memuliakann Allah, memberitakan Injil dan memberdayakan
+                    warga jemaat"</p>
+                </v-card-text>
+              </v-col>
+              <v-col cols="12" md="6" xl="6">
+                <v-img src="@/assets/img/icon-features.png" class="feature-img" />
+              </v-col>
+            </v-row>
           </v-card>
         </v-col>
       </v-row>
