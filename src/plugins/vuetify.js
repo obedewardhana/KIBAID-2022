@@ -4,13 +4,17 @@ import Vuetify from 'vuetify/lib';
 Vue.use(Vuetify);
 
 export default new Vuetify({
-    theme: {
+    theme: {        
+        options: {
+            customProperties: true,
+        },
         themes: {
             light: {
                 primary: "#042F4D",
                 secondary: "#1B4562",
+                bluelighter:"#82BECF",
                 accent: "#458CA4",
-                gray:"#E4EBE7",
+                gray: "#E4EBE7",
             }
         }
     }

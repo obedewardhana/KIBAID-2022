@@ -1,7 +1,11 @@
-
-
+@import "~vuetify/src/components/VStepper/_variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
+/*Colors*/
+
+
+/*General*/
 
 .v-application {
     .title {
@@ -18,6 +22,7 @@
     h1,h2,h3,h4,h5,h6,p {
         font-family: 'Poppins',sans-serif!important;
         letter-spacing: normal;
+        word-break: break-word;
     }
     p{
         font-size:16px;
@@ -29,17 +34,30 @@
     .v-btn{
         font-family: 'Poppins',sans-serif!important;
     }
+    .container {
+        max-width:1024px;
+    }
 }
 
-.feature-img {
-    display:block;
-    position:absolute;
-    top: 30px;
-    right:0;
-    width:180px;
-    margin-right:-8px;
-    z-index: 1;
+/*Section*/
+
+section {
+    .feature-img {
+        display:block;
+        position:absolute;
+        top:30px;
+        right:0;
+        width:180px;
+        height:100%;
+        margin-right:-8px;
+        z-index: 1;
+    }
+    &.bg--secondary {
+        background-color:var(--v-bluelighter-base);
+    }
 }
+
+/*Footer*/
 
 footer {
     .v-btn__content {
