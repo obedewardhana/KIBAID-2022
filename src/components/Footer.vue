@@ -8,10 +8,8 @@
               <v-list-item-avatar>
                 <img src="@/assets/img/logo-kibaid.png" alt="Logo" />
               </v-list-item-avatar>
-              <v-list-item-content class="d-block" style="flex:unset!important">
-                <v-list-item-title class="title text-uppercase primary--text font-weight-bold">Sinode
-                </v-list-item-title>
-                <v-list-item-title class="title text-uppercase primary--text font-weight-bold">Kibaid
+              <v-list-item-content class="d-block" style="flex:unset!important;">
+                <v-list-item-title class="title text-uppercase primary--text font-weight-bold my-0" style="line-height:1.2">Sinode <br> Kibaid
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>

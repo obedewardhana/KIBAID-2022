@@ -15,6 +15,7 @@
 
 <script>
 import '@/assets/scss/style.scss';
+import '@/assets/scss/responsive.scss';
 import Vue from "vue";
 import NavigationComp from "./components/Navigation";
 import FooterComp from "./components/Footer";

@@ -6,7 +6,7 @@
           <v-col cols="12" md="12" xl="12">
             <v-row align="center" justify="center">
               <v-col cols="12" md="12" xl="12">
-                <h1 class="text-h5 text-md-h3 text-xl-h2 font-weight-light mb-4 text-center">Selamat Datang di</h1>
+                <h1 class="text-h5 text-md-h3 text-xl-h2 font-weight-light text-center">Selamat Datang di</h1>
                 <h1 class="text-h5 text-md-h3 text-xl-h2 font-weight-bold text-center">
                   SINODE GEREJA KIBAID
                 </h1>

@@ -11,9 +11,16 @@
                   Mari Mendukung Pelayanan Kami
                 </v-card-title>
                 <v-card-text class="primary--text" style="z-index:2;position:relative;">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </v-card-text>
+              </v-col>
+              <v-col cols="12" sm="4" md="6" xl="6">
+                <div class="action-box">
+                  <v-btn x-large depressed color="primary" class="text-capitalize btn-default" dark
+                    @click.stop="showDonate = true"> Donasi
+                    <DonationComp v-model="showDonate" />
+                  </v-btn>
+                </div>
               </v-col>
             </v-row>
           </v-card>
@@ -29,8 +36,11 @@
 <script>
 export default {
   name: "DonationSectionComp",
+  components: {
+    DonationComp: () => import("./Donate.vue")
+  },
   data: () => ({
-
+    showDonate: false
   }),
 };
 </script>

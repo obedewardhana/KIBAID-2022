@@ -23,9 +23,10 @@
         font-family: 'Poppins',sans-serif!important;
         letter-spacing: normal;
         word-break: break-word;
+        line-height:1.5;
     }
     p{
-        font-size:16px;
+        font-size:18px;
         font-weight:500;
     }
     .text-small {
@@ -36,6 +37,25 @@
     }
     .container {
         max-width:1024px;
+    }
+    .btn-default {
+        font-size:1.5rem;
+        letter-spacing:unset;
+        border-radius:0;
+    }
+    .action-box {
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+        height:100%;
+        padding:12px;
+    }
+    .v-list {
+        .v-list-item{
+            font-family:'Poppins',sans-serif;
+        }
     }
 }
 
