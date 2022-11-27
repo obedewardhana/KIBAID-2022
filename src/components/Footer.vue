@@ -59,12 +59,6 @@
   </v-footer>
 </template>
 
-<style scoped>
-.v-card {
-  width: 100%;
-}
-</style>
-
 <script>
 export default {
   name: "FooterComp",

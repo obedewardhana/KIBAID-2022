@@ -8,5 +8,28 @@ Responsive
             justify-content:flex-start;
         }
     }
+    .v-dialog {
+        .v-list-item {
+            flex-direction: column;
+            min-height: unset;
+            .v-list-item__content {
+                width:100%;
+            }
+        }
+    }
+}
 
+@media screen and (max-width:480px) {
+    .v-application {
+        .v-card {
+            .faith-item {
+                h1 {
+                    width:20%;
+                }
+                p {
+                    width:80%;
+                }
+            }
+        }
+    }
 }

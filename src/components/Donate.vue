@@ -8,18 +8,21 @@
                             style="z-index:2;position:relative;">
                             Berikan Donasi Anda melalui :
                         </v-card-title>
-                        <v-card-text class="primary--text" style="z-index:2;position:relative;">
+                        <v-card-text class="primary--text">
                             <v-list-item two-line>
                                 <v-list-item-content>
                                     <v-list-item-title>BCA</v-list-item-title>
+                                    <v-list-item-subtitle>a.n. Sinode Kibaid</v-list-item-subtitle>
                                     <v-list-item-subtitle>0123456677</v-list-item-subtitle>
                                 </v-list-item-content>
                                 <v-list-item-content>
                                     <v-list-item-title>BNI</v-list-item-title>
+                                    <v-list-item-subtitle>a.n. Sinode Kibaid</v-list-item-subtitle>
                                     <v-list-item-subtitle>0123456677</v-list-item-subtitle>
                                 </v-list-item-content>
                                 <v-list-item-content>
                                     <v-list-item-title>Mandiri</v-list-item-title>
+                                    <v-list-item-subtitle>a.n. Sinode Kibaid</v-list-item-subtitle>
                                     <v-list-item-subtitle>0123456677</v-list-item-subtitle>
                                 </v-list-item-content>
                             </v-list-item>
