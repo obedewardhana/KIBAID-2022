@@ -3,7 +3,7 @@
 
     <v-navigation-drawer v-model="drawer" app temporary dark>
       <v-list>
-        <v-list-item>
+        <v-list-item @click.stop="$router.push('/home').catch(()=>{});">
           <v-list-item-avatar>
             <img src="@/assets/img/logo-kibaid.png" alt="Logo" />
           </v-list-item-avatar>
@@ -32,15 +32,18 @@
 
 
     <v-app-bar app :color="color" :flat="flat" dark class="px-0 px-md-15 px-xl-15" style="" :class="{ expand: flat }">
-      <v-container>
+      <v-container class="px-0 py-0">
         <v-row>
           <v-col cols="12">
             <div class="d-flex align-center">
-              <v-toolbar-title class="d-flex align-center">
-                <v-img src="@/assets/img/logo-kibaid.png" max-width="50px" width="100%" height="100%"
-                  object-fit="contain" class="my-auto mr-3" />
-                <h1 class="title text-uppercase" style="line-height:1.2">Sinode <br>Kibaid</h1>
-              </v-toolbar-title>
+                <v-btn :ripple="false" large depressed link @click.stop="$router.push('/home').catch(()=>{});"  color="transparent" elevation="0" class="no-hover"
+                  rounded>
+                  <v-toolbar-title class="d-flex align-center">
+                    <v-img src="@/assets/img/logo-kibaid.png" max-width="50px" width="100%" height="100%"
+                      object-fit="contain" class="my-auto mr-3" />
+                    <h1 class="title text-uppercase" style="line-height:1.2">Sinode <br>Kibaid</h1>
+                  </v-toolbar-title>
+                </v-btn>
               <v-spacer />
               <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="mr-4" v-if="isXs" />
               <div v-else>

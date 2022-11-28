@@ -83,6 +83,7 @@
                 margin:0;
                 z-index:2;
                 position:relative;
+                color:var(--v-primary-base);
                 text-transform: capitalize;
             }
             &.even {
@@ -94,13 +95,86 @@
                 content:' ';
                 display:block;
                 position:absolute;
-                width:160%;
+                width:300%;
                 height:100%;
                 background:var(--v-gray-base);
                 top:0;
-                left:-30%;
+                left:-100%;
                 z-index: 1;
             }
+        }
+        .bg-infographic {
+            &:nth-child(2) {
+                background:var(--v-gray-base);
+                position:relative;
+                &:after {
+                    content:' ';
+                    display:block;
+                    position:absolute;
+                    width:300%;
+                    height:100%;
+                    background:var(--v-gray-base);
+                    top:0;
+                    left:0;
+                    z-index: 1;
+                }
+            }
+            &:nth-child(3) {
+                background:var(--v-gray-base);
+                position:relative;
+                &:after {
+                    content:' ';
+                    display:block;
+                    position:absolute;
+                    width:300%;
+                    height:100%;
+                    background:var(--v-gray-base);
+                    top:0;
+                    right:0;
+                    z-index: 1;
+                }
+            }
+            .info-item {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                position:relative;
+                justify-content:center;
+                padding:15px;            
+                img {
+                    width: 20%;
+                    height: 80px;
+                    object-fit: contain;
+                    object-position: center;
+                    position:relative;
+                    z-index:2;
+                }
+                .info-content {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    width: 80%;
+                    padding: 20px;
+                    position:relative;
+                    z-index:2;
+                    p {
+                        font-size: 45px;
+                        font-weight: bold;
+                        margin: 0;
+                        line-height: 1;
+                        color: var(--v-bluesea-base);
+                    }
+                    h1 {
+                        text-transform: uppercase;
+                        color: var(--v-bluesea-base);
+                    }
+                }
+            }
+        }
+    }
+    .no-hover:before {
+        display:none;
+        &:active{
+            display:none;
         }
     }
     section {

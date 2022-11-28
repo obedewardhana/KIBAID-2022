@@ -46,8 +46,8 @@
           <v-row>
             <div class="primary--text text--uppercase text-h6 pl-4 mb-3">KONTAK KAMI</div>
           </v-row>
-          <v-row class="flex-column">
-            <v-btn v-for="(icon, i) in icons" :key="i" class="mx-4 primary--text justify-start text-capitalize pl-0"
+          <v-row class="flex-column flex-wrap">
+            <v-btn v-for="(icon, i) in icons" :key="i" class="mx-4 primary--text justify-start text-capitalize ml-0"
               :href="icon.link" target="_blank" text>
               <v-icon size="24px" class="mr-2">{{ icon.text }}</v-icon>
               {{ icon.social }}

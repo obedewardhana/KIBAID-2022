@@ -12,6 +12,7 @@ export default new Vuetify({
             light: {
                 primary: "#042F4D",
                 secondary: "#1B4562",
+                bluesea: "#036280",
                 bluelighter:"#82BECF",
                 accent: "#458CA4",
                 gray: "#E4EBE7",

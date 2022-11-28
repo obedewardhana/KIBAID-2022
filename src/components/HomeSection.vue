@@ -1,6 +1,6 @@
 <template>
   <section id="hero">
-    <v-parallax src="@/assets/img/img-pray1.jpg" height="750">
+    <v-parallax src="@/assets/img/img-pray1.jpg" height="750" style="margin-bottom:-150px">
       <v-overlay value="true" color="primary" absolute>
         <v-row align="center" justify="center" class="text-center">
           <v-col cols="12" md="12" xl="12">
@@ -24,7 +24,7 @@
     <v-container id="features" class="mt-2">
       <v-row align="center" justify="center">
         <v-col cols="12">
-          <v-card :elevation="0" color="gray" class="py-8 px-3 overflow-hidden mx-5" tile style="margin-top:-140px;position:relative;">
+          <v-card :elevation="0" color="gray" class="py-8 px-3 overflow-hidden mx-5" tile style="position:relative;">
             <v-row>
               <v-col cols="12" md="6" xl="6">
                 <v-card-title class="text-h5 font-weight-bold primary--text" style="z-index:2;position:relative;">

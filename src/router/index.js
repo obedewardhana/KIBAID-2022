@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../pages/Home.vue";
-import Church from "../pages/Church.vue";
+import HomePage from "../pages/Home.vue";
+import ChurchPage from "../pages/Church.vue";
 
 Vue.use(VueRouter);
 
@@ -9,7 +9,7 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: HomePage,
     meta: {
       requiresAuth: false
     }
@@ -17,7 +17,7 @@ const routes = [
   {
     path: "/home",
     name: "Home",
-    component: Home,
+    component: HomePage,
     meta: {
       requiresAuth: false
     }
@@ -25,7 +25,7 @@ const routes = [
   {
     path: "/church",
     name: "Church",
-    component: Church,
+    component: ChurchPage,
     meta: {
       requiresAuth: false
     }

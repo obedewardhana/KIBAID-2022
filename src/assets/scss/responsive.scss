@@ -7,6 +7,39 @@ Responsive
         .action-box {
             justify-content:flex-start;
         }
+        .v-card {
+            .bg-infographic {
+                &:nth-child(2) {
+                    background:transparent;
+                    &:after {
+                        display:none;
+                    }
+                }
+                &:nth-child(3) {
+                    background:transparent;
+                    &:after {
+                        display:none;
+                    }
+                }
+                .info-item {
+                    padding: 15px;
+                    margin:10px;
+                    border-radius:10px;
+                    background: var(--v-gray-base);
+                    img {
+                        height:70px;
+                    }
+                    .info-content {
+                        p {
+                            font-size:35px;
+                        }
+                        h1 {
+                            font-size:15px;
+                        }
+                    }
+                }
+            }
+        }
     }
     .v-dialog {
         .v-list-item {
