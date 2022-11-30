@@ -4,23 +4,36 @@
             <v-row>
                 <v-col cols="12">
                     <v-card :elevation="0" color="transparent" class="py-8 px-3" tile>
-                        <div class="feed-date">
-                            <h1>{{ new Intl.DateTimeFormat('id', options).format(new Date()) }}</h1>
-                        </div>
-                        <v-row>
+                        <v-row >
+                            <v-col cols="8">
+                                <div class="feed-date">
+                                    <h1>{{ new Intl.DateTimeFormat('id', options).format(new Date()) }}</h1>
+                                </div>
+                            </v-col>
+                            <v-col cols="4">
+                                <div class="feed-control">
+                                    <v-btn @click="slidePrev" class="btn-control btn-feed-prev">
+                                        <v-icon size="24px">mdi-arrow-left</v-icon>
+                                    </v-btn>
+                                    <v-btn @click="slideNext" class="btn-control btn-feed-next">
+                                        <v-icon size="24px">mdi-arrow-right</v-icon>
+                                    </v-btn>
+                                </div>
+                            </v-col>
+                        </v-row>
+                        <v-row class="mt-0">
                             <v-col cols="4">
                                 <div class="feed-filter">
                                     <v-btn :ripple="false" v-for="category in categories" :key="category.title"
                                         :class="category.class + `${category.title === filter ? ' active ' : ''}`"
                                         :data-filter="category.title" @click="getFilter(category.title)">
-                                        <v-icon size="24px" class="mr-2">{{category.icon}}</v-icon>
+                                        <v-icon size="24px" class="mr-2">{{ category.icon }}</v-icon>
                                         {{ category.title }}
                                     </v-btn>
                                 </div>
                             </v-col>
                             <v-col cols="8">
-                                <VueSlickCarousel :arrows="true" v-bind="settings" @init="" @reinit="getFilter"
-                                    ref="carousel">
+                                <VueSlickCarousel v-bind="settings" @init="" @reinit="getFilter" ref="carousel">
                                     <template v-if="filter == 'Kabar'">
                                         <div class="feed-item overflow-hidden" v-for="(feed, i) in feeds" :key="i">
                                             <v-overlay value="true" color="primary" absolute>
@@ -28,7 +41,7 @@
                                                     <v-img :src="feed.src" :lazy-src="feed.src" aspect-ratio="1"
                                                         class="feed-img fill-height"></v-img>
                                                     <h2 class="text-capitalize">{{ feed.title }}</h2>
-                                                    <span class="feed-cateogry">{{ feed.category }}</span>
+                                                    <span class="feed-category">{{ feed.category }}</span>
                                                     <v-btn :ripple="false" :href="feed.link" target="_blank" text
                                                         color="white" class="text-capitalize btn-default no-hover" dark>
                                                         Read more >
@@ -45,7 +58,7 @@
                                                     <v-img :src="renungan.src" :lazy-src="renungan.src" aspect-ratio="1"
                                                         class="feed-img fill-height"></v-img>
                                                     <h2 class="text-capitalize">{{ renungan.title }}</h2>
-                                                    <span class="feed-cateogry">{{ renungan.category }}</span>
+                                                    <span class="feed-category">{{ renungan.category }}</span>
                                                     <v-btn :ripple="false" :href="renungan.link" target="_blank" text
                                                         color="white" class="text-capitalize btn-default no-hover" dark>
                                                         Read more >
@@ -62,7 +75,7 @@
                                                     <v-img :src="organisasi.src" :lazy-src="organisasi.src"
                                                         aspect-ratio="1" class="feed-img fill-height"></v-img>
                                                     <h2 class="text-capitalize">{{ organisasi.title }}</h2>
-                                                    <span class="feed-cateogry">{{ organisasi.category }}</span>
+                                                    <span class="feed-category">{{ organisasi.category }}</span>
                                                     <v-btn :ripple="false" :href="organisasi.link" target="_blank" text
                                                         color="white" class="text-capitalize btn-default no-hover" dark>
                                                         Read more >
@@ -79,7 +92,7 @@
                                                     <v-img :src="download.src" :lazy-src="download.src" aspect-ratio="1"
                                                         class="feed-img fill-height"></v-img>
                                                     <h2 class="text-capitalize">{{ download.title }}</h2>
-                                                    <span class="feed-cateogry">{{ download.category }}</span>
+                                                    <span class="feed-category">{{ download.category }}</span>
                                                     <v-btn :ripple="false" :href="download.link" target="_blank" text
                                                         color="white" class="text-capitalize btn-default no-hover" dark>
                                                         Read more >
@@ -108,6 +121,7 @@ export default {
     data: () => ({
         settings: {
             "dots": false,
+            "arrows": false,
             "infinite": true,
             "speed": 500,
             "slidesToShow": 2,
@@ -115,6 +129,7 @@ export default {
             "slidesPerRow": 1,
             "slidesToScroll": 2,
             "initialSlide": 0,
+            "autoplay":true,
             "responsive": [
                 {
                     "breakpoint": 1024,
@@ -122,22 +137,23 @@ export default {
                         "slidesToShow": 2,
                         "slidesToScroll": 2,
                         "infinite": true,
-                        "dots": true
                     }
                 },
                 {
-                    "breakpoint": 600,
+                    "breakpoint": 768,
                     "settings": {
                         "slidesToShow": 1,
                         "slidesToScroll": 1,
-                        "initialSlide": 0
+                        "initialSlide": 0,
+                        "infinite": true
                     }
                 },
                 {
                     "breakpoint": 480,
                     "settings": {
                         "slidesToShow": 1,
-                        "slidesToScroll": 1
+                        "slidesToScroll": 1,
+                        "infinite": true
                     }
                 }
             ]
@@ -373,8 +389,14 @@ export default {
         getFilter(event) {
             var filtered = event;
             this.filter = filtered;
-            this.$refs.carousel.goTo('0')
+            this.$refs.carousel.goTo('0');
             console.log(filtered);
+        },
+        slideNext() {
+            this.$refs.carousel.next();
+        },
+        slidePrev() {
+            this.$refs.carousel.prev();
         },
         getTanggal() {
             const datetime = new Date();

@@ -176,17 +176,31 @@
     }
     .feed-date {
       background: var(--v-primary-base);
-      width: 60%;
+      width: 100%;
       color: var(--v-white-base);
       display: flex;
       align-items: center;
       justify-content: center;
       height: 40px;
-      position: absolute;
-      top: 32px;
-      left: 12px;
+      position: relative;
       h1 {
         font-size: 20px;
+      }
+    }
+    .feed-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: -25px;
+      .btn-control {
+        width: 50%;
+        border-radius: 0;
+        box-shadow: unset;
+        height: 40px !important;
+        display: flex;
+        align-items: center;
+        background: var(--v-secondary-base);
+        color:var(--v-white-base);
       }
     }
     .feed-item {
@@ -233,7 +247,7 @@
               -webkit-transition: 0.5s ease-in-out;
             }
           }
-          .feed-cateogry {
+          .feed-category {
             font-family: "Poppins", sans-serif;
             background-color: transparent;
             border: 1px solid var(--v-white-base);
@@ -253,8 +267,7 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: calc(100% - 44px);
-      margin-top: 44px;
+      height: 100%;
       .v-btn {
         border-bottom: 1px solid var(--v-white-base);
         background-color: var(--v-grayrefuge-base);
@@ -276,9 +289,6 @@
           height: calc(100% / 2) !important;
         }
       }
-    }
-    .slick-list {
-      padding-top: 44px;
     }
     .slick-prev {
       top: 0;

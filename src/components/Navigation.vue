@@ -1,15 +1,15 @@
 <template>
   <div>
 
-    <v-navigation-drawer v-model="drawer" app temporary dark>
-      <v-list>
+    <v-navigation-drawer v-model="drawer" app temporary color="secondary">
+      <v-list >
         <v-list-item @click.stop="$router.push('/home').catch(()=>{});">
           <v-list-item-avatar>
             <img src="@/assets/img/logo-kibaid.png" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title text-uppercase">Sinode</v-list-item-title>
-            <v-list-item-title class="title text-uppercase">Kibaid</v-list-item-title>
+            <v-list-item-title class="title text-uppercase white--text">Sinode</v-list-item-title>
+            <v-list-item-title class="title text-uppercase white--text">Kibaid</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -18,11 +18,11 @@
 
       <v-list dense>
         <v-list-item v-for="([icon, text, link], i) in items" :key="i" link @click="$vuetify.goTo(link)">
-          <v-list-item-icon class="justify-center">
-            <v-icon>{{ icon }}</v-icon>
+          <v-list-item-icon class="justify-center white--text">
+            <v-icon class="white--text">{{ icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title class="subtitile-1">{{
+            <v-list-item-title class="subtitile-1 white--text">{{
                 text
             }}</v-list-item-title>
           </v-list-item-content>
@@ -36,7 +36,7 @@
         <v-row>
           <v-col cols="12">
             <div class="d-flex align-center">
-                <v-btn :ripple="false" large depressed link @click.stop="$router.push('/home').catch(()=>{});"  color="transparent" elevation="0" class="no-hover"
+                <v-btn :ripple="false" width="140" large depressed link @click.stop="$router.push('/home').catch(()=>{});"  color="transparent" elevation="0" class="no-hover"
                   rounded>
                   <v-toolbar-title class="d-flex align-center">
                     <v-img src="@/assets/img/logo-kibaid.png" max-width="50px" width="100%" height="100%"
@@ -92,7 +92,7 @@ export default {
       ["mdi-home-outline", "Home", "#hero"],
       ["mdi-information-outline", "Tentang Kami", "#features"],
       ["mdi-church-outline", "Gereja", "#church"],
-      ["mdi-newspaper", "Kabar", "#news"],
+      ["mdi-newspaper", "Kabar", "#feed"],
       ["mdi-email-outline", "Kontak", "#contact"],
     ],
   }),

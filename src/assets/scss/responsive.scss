@@ -3,66 +3,128 @@ Responsive
 */
 
 @media screen and (max-width: 768px) {
-    .v-application {
-        .action-box {
-            justify-content:flex-start;
-        }
-        .v-card {
-            .bg-infographic {
-                &:nth-child(2) {
-                    background:transparent;
-                    &:after {
-                        display:none;
-                    }
-                }
-                &:nth-child(3) {
-                    background:transparent;
-                    &:after {
-                        display:none;
-                    }
-                }
-                .info-item {
-                    padding: 15px;
-                    margin:10px;
-                    border-radius:10px;
-                    background: var(--v-gray-base);
-                    img {
-                        height:70px;
-                    }
-                    .info-content {
-                        p {
-                            font-size:35px;
-                        }
-                        h1 {
-                            font-size:15px;
-                        }
-                    }
-                }
-            }
-        }
+  .v-application {
+    .action-box {
+      justify-content: flex-start;
     }
-    .v-dialog {
-        .v-list-item {
-            flex-direction: column;
-            min-height: unset;
-            .v-list-item__content {
-                width:100%;
-            }
+    .v-card {
+      .bg-infographic {
+        &:nth-child(2) {
+          background: transparent;
+          &:after {
+            display: none;
+          }
         }
+        &:nth-child(3) {
+          background: transparent;
+          &:after {
+            display: none;
+          }
+        }
+        .info-item {
+          padding: 15px;
+          margin: 10px;
+          border-radius: 10px;
+          background: var(--v-gray-base);
+          img {
+            height: 70px;
+          }
+          .info-content {
+            p {
+              font-size: 35px;
+            }
+            h1 {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+      .feed-date {
+        h1 {
+          font-size: 16px;
+        }
+      }
+      .feed-filter {
+        .v-btn {
+          font-size: 20px;
+        }
+      }
+      .feed-item {
+        height: 200px;
+        .v-overlay__content {
+          .feed-content {
+            h2 {
+              font-size: 20px;
+              margin-top: 30px;
+            }
+            .feed-category {
+              top: 20px;
+              font-size: 10px;
+              padding: 3px 8px;
+              bottom: unset;
+            }
+            .v-btn {
+              font-size: 12px;
+              padding: 0;
+              bottom: -15px;
+            }
+          }
+        }
+      }
     }
+  }
+  .v-dialog {
+    .v-list-item {
+      flex-direction: column;
+      min-height: unset;
+      .v-list-item__content {
+        width: 100%;
+      }
+    }
+  }
 }
 
-@media screen and (max-width:480px) {
-    .v-application {
-        .v-card {
-            .faith-item {
-                h1 {
-                    width:20%;
-                }
-                p {
-                    width:80%;
-                }
-            }
+@media screen and (max-width: 480px) {
+  .v-application {
+    .v-card {
+      .faith-item {
+        h1 {
+          width: 20%;
         }
+        p {
+          width: 80%;
+        }
+      }
+      .feed-control {
+        .v-btn {
+          min-width: unset !important;
+          .v-icon {
+            font-size: 16px !important;
+          }
+        }
+      }
+      .feed-date {
+        h1 {
+          font-size: 10px;
+        }
+      }
+      .feed-filter {
+        .v-btn {
+          font-size: 12px;          
+          .v-icon {
+            display: none;
+          }
+        }
+      }
+      .feed-item {
+        .v-overlay__content {
+          .feed-content {
+            h2 {
+              font-size: 16px;
+            }
+          }
+        }
+      }
     }
+  }
 }

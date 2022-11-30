@@ -15,6 +15,14 @@ const routes = [
     }
   },
   {
+    path: "/home",
+    name: "Home",
+    component: HomePage,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
     path: "/church",
     name: "Church",
     component: ChurchPage,
