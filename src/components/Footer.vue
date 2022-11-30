@@ -34,7 +34,7 @@
             <v-btn class="justify-start" text @click="$vuetify.goTo('#church')">
               <span class="mr-2 primary--text text-capitalize">Gereja</span>
             </v-btn>
-            <v-btn class="justify-start" text @click="$vuetify.goTo('#news')">
+            <v-btn class="justify-start" text @click="$vuetify.goTo('#feed')">
               <span class="mr-2 primary--text text-capitalize">Kabar</span>
             </v-btn>
             <v-btn class="justify-start" text @click="$vuetify.goTo('#contact')">

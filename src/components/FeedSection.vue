@@ -1,0 +1,392 @@
+<template>
+    <section id="feed">
+        <v-container>
+            <v-row>
+                <v-col cols="12">
+                    <v-card :elevation="0" color="transparent" class="py-8 px-3" tile>
+                        <div class="feed-date">
+                            <h1>{{ new Intl.DateTimeFormat('id', options).format(new Date()) }}</h1>
+                        </div>
+                        <v-row>
+                            <v-col cols="4">
+                                <div class="feed-filter">
+                                    <v-btn :ripple="false" v-for="category in categories" :key="category.title"
+                                        :class="category.class + `${category.title === filter ? ' active ' : ''}`"
+                                        :data-filter="category.title" @click="getFilter(category.title)">
+                                        <v-icon size="24px" class="mr-2">{{category.icon}}</v-icon>
+                                        {{ category.title }}
+                                    </v-btn>
+                                </div>
+                            </v-col>
+                            <v-col cols="8">
+                                <VueSlickCarousel :arrows="true" v-bind="settings" @init="" @reinit="getFilter"
+                                    ref="carousel">
+                                    <template v-if="filter == 'Kabar'">
+                                        <div class="feed-item overflow-hidden" v-for="(feed, i) in feeds" :key="i">
+                                            <v-overlay value="true" color="primary" absolute>
+                                                <div class="feed-content">
+                                                    <v-img :src="feed.src" :lazy-src="feed.src" aspect-ratio="1"
+                                                        class="feed-img fill-height"></v-img>
+                                                    <h2 class="text-capitalize">{{ feed.title }}</h2>
+                                                    <span class="feed-cateogry">{{ feed.category }}</span>
+                                                    <v-btn :ripple="false" :href="feed.link" target="_blank" text
+                                                        color="white" class="text-capitalize btn-default no-hover" dark>
+                                                        Read more >
+                                                    </v-btn>
+                                                </div>
+                                            </v-overlay>
+                                        </div>
+                                    </template>
+                                    <template v-else-if="filter == 'Renungan'">
+                                        <div class="feed-item overflow-hidden" v-for="(renungan, i) in renungans"
+                                            :key="i">
+                                            <v-overlay value="true" color="primary" absolute>
+                                                <div class="feed-content">
+                                                    <v-img :src="renungan.src" :lazy-src="renungan.src" aspect-ratio="1"
+                                                        class="feed-img fill-height"></v-img>
+                                                    <h2 class="text-capitalize">{{ renungan.title }}</h2>
+                                                    <span class="feed-cateogry">{{ renungan.category }}</span>
+                                                    <v-btn :ripple="false" :href="renungan.link" target="_blank" text
+                                                        color="white" class="text-capitalize btn-default no-hover" dark>
+                                                        Read more >
+                                                    </v-btn>
+                                                </div>
+                                            </v-overlay>
+                                        </div>
+                                    </template>
+                                    <template v-else-if="filter == 'Organisasi'">
+                                        <div class="feed-item overflow-hidden" v-for="(organisasi, i) in organisasis"
+                                            :key="i">
+                                            <v-overlay value="true" color="primary" absolute>
+                                                <div class="feed-content">
+                                                    <v-img :src="organisasi.src" :lazy-src="organisasi.src"
+                                                        aspect-ratio="1" class="feed-img fill-height"></v-img>
+                                                    <h2 class="text-capitalize">{{ organisasi.title }}</h2>
+                                                    <span class="feed-cateogry">{{ organisasi.category }}</span>
+                                                    <v-btn :ripple="false" :href="organisasi.link" target="_blank" text
+                                                        color="white" class="text-capitalize btn-default no-hover" dark>
+                                                        Read more >
+                                                    </v-btn>
+                                                </div>
+                                            </v-overlay>
+                                        </div>
+                                    </template>
+                                    <template v-else-if="filter == 'Download'">
+                                        <div class="feed-item overflow-hidden" v-for="(download, i) in downloads"
+                                            :key="i">
+                                            <v-overlay value="true" color="primary" absolute>
+                                                <div class="feed-content">
+                                                    <v-img :src="download.src" :lazy-src="download.src" aspect-ratio="1"
+                                                        class="feed-img fill-height"></v-img>
+                                                    <h2 class="text-capitalize">{{ download.title }}</h2>
+                                                    <span class="feed-cateogry">{{ download.category }}</span>
+                                                    <v-btn :ripple="false" :href="download.link" target="_blank" text
+                                                        color="white" class="text-capitalize btn-default no-hover" dark>
+                                                        Read more >
+                                                    </v-btn>
+                                                </div>
+                                            </v-overlay>
+                                        </div>
+                                    </template>
+                                </VueSlickCarousel>
+                            </v-col>
+                        </v-row>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
+    </section>
+</template>
+
+<script>
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+export default {
+    name: "FeedSectionComp",
+    components: { VueSlickCarousel },
+    data: () => ({
+        settings: {
+            "dots": false,
+            "infinite": true,
+            "speed": 500,
+            "slidesToShow": 2,
+            "rows": 2,
+            "slidesPerRow": 1,
+            "slidesToScroll": 2,
+            "initialSlide": 0,
+            "responsive": [
+                {
+                    "breakpoint": 1024,
+                    "settings": {
+                        "slidesToShow": 2,
+                        "slidesToScroll": 2,
+                        "infinite": true,
+                        "dots": true
+                    }
+                },
+                {
+                    "breakpoint": 600,
+                    "settings": {
+                        "slidesToShow": 1,
+                        "slidesToScroll": 1,
+                        "initialSlide": 0
+                    }
+                },
+                {
+                    "breakpoint": 480,
+                    "settings": {
+                        "slidesToShow": 1,
+                        "slidesToScroll": 1
+                    }
+                }
+            ]
+        },
+        options: {
+            "weekday": 'long',
+            "day": 'numeric',
+            "month": 'long',
+            "year": 'numeric'
+        },
+        feeds: [
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 1',
+                link: '',
+                category: 'kabar'
+            },
+            {
+                src: require('@/assets/img/img-worship1.jpg'),
+                title: 'judul 2',
+                link: '',
+                category: 'kabar'
+            },
+            {
+                src: require('@/assets/img/img-worship2.jpg'),
+                title: 'judul 3',
+                link: '',
+                category: 'kabar'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 4',
+                link: '',
+                category: 'kabar'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 1',
+                link: '',
+                category: 'kabar'
+            },
+            {
+                src: require('@/assets/img/img-worship1.jpg'),
+                title: 'judul 2',
+                link: '',
+                category: 'kabar'
+            },
+            {
+                src: require('@/assets/img/img-worship2.jpg'),
+                title: 'judul 3',
+                link: '',
+                category: 'kabar'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 4',
+                link: '',
+                category: 'kabar'
+            },
+        ],
+        renungans: [
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 1',
+                link: '',
+                category: 'renungan'
+            },
+            {
+                src: require('@/assets/img/img-worship1.jpg'),
+                title: 'judul 2',
+                link: '',
+                category: 'renungan'
+            },
+            {
+                src: require('@/assets/img/img-worship2.jpg'),
+                title: 'judul 3',
+                link: '',
+                category: 'renungan'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 4',
+                link: '',
+                category: 'renungan'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 1',
+                link: '',
+                category: 'renungan'
+            },
+            {
+                src: require('@/assets/img/img-worship1.jpg'),
+                title: 'judul 2',
+                link: '',
+                category: 'renungan'
+            },
+            {
+                src: require('@/assets/img/img-worship2.jpg'),
+                title: 'judul 3',
+                link: '',
+                category: 'renungan'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 4',
+                link: '',
+                category: 'renungan'
+            },
+        ],
+        organisasis: [
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 1',
+                link: '',
+                category: 'organisasi'
+            },
+            {
+                src: require('@/assets/img/img-worship1.jpg'),
+                title: 'judul 2',
+                link: '',
+                category: 'organisasi'
+            },
+            {
+                src: require('@/assets/img/img-worship2.jpg'),
+                title: 'judul 3',
+                link: '',
+                category: 'organisasi'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 4',
+                link: '',
+                category: 'organisasi'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 1',
+                link: '',
+                category: 'organisasi'
+            },
+            {
+                src: require('@/assets/img/img-worship1.jpg'),
+                title: 'judul 2',
+                link: '',
+                category: 'organisasi'
+            },
+            {
+                src: require('@/assets/img/img-worship2.jpg'),
+                title: 'judul 3',
+                link: '',
+                category: 'organisasi'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 4',
+                link: '',
+                category: 'organisasi'
+            },
+        ],
+        downloads: [
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 1',
+                link: '',
+                category: 'download'
+            },
+            {
+                src: require('@/assets/img/img-worship1.jpg'),
+                title: 'judul 2',
+                link: '',
+                category: 'download'
+            },
+            {
+                src: require('@/assets/img/img-worship2.jpg'),
+                title: 'judul 3',
+                link: '',
+                category: 'download'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 4',
+                link: '',
+                category: 'download'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 1',
+                link: '',
+                category: 'download'
+            },
+            {
+                src: require('@/assets/img/img-worship1.jpg'),
+                title: 'judul 2',
+                link: '',
+                category: 'download'
+            },
+            {
+                src: require('@/assets/img/img-worship2.jpg'),
+                title: 'judul 3',
+                link: '',
+                category: 'download'
+            },
+            {
+                src: require('@/assets/img/img-pray1.jpg'),
+                title: 'judul 4',
+                link: '',
+                category: 'download'
+            },
+        ],
+        categories: [
+            {
+                title: 'Kabar',
+                icon: 'mdi-newspaper'
+            },
+            {
+                title: 'Renungan',
+                icon: 'mdi-book'
+            },
+            {
+                title: 'Organisasi',
+                icon: 'mdi-account'
+            },
+            {
+                title: 'Download',
+                icon: 'mdi-download'
+            }
+        ],
+        filter: 'Kabar',
+        isActive: false
+    }),
+    methods: {
+        getFilter(event) {
+            var filtered = event;
+            this.filter = filtered;
+            this.$refs.carousel.goTo('0')
+            console.log(filtered);
+        },
+        getTanggal() {
+            const datetime = new Date();
+            let options = {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+            };
+
+            console.log(new Intl.DateTimeFormat('id', options).format(datetime));
+        }
+    }
+}
+</script>

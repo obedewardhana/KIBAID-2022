@@ -16,6 +16,8 @@ export default new Vuetify({
                 bluelighter:"#82BECF",
                 accent: "#458CA4",
                 gray: "#E4EBE7",
+                grayrefuge:"#617D82",
+                white: "#ffffff",
             }
         }
     }
