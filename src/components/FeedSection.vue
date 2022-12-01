@@ -4,13 +4,13 @@
             <v-row>
                 <v-col cols="12">
                     <v-card :elevation="0" color="transparent" class="py-8 px-3" tile>
-                        <v-row >
-                            <v-col cols="8">
+                        <v-row>
+                            <v-col cols="8" class="pr-0">
                                 <div class="feed-date">
                                     <h1>{{ new Intl.DateTimeFormat('id', options).format(new Date()) }}</h1>
                                 </div>
                             </v-col>
-                            <v-col cols="4">
+                            <v-col cols="4" class="pl-0">
                                 <div class="feed-control">
                                     <v-btn @click="slidePrev" class="btn-control btn-feed-prev">
                                         <v-icon size="24px">mdi-arrow-left</v-icon>
@@ -22,7 +22,7 @@
                             </v-col>
                         </v-row>
                         <v-row class="mt-0">
-                            <v-col cols="4">
+                            <v-col cols="4" class="pt-0">
                                 <div class="feed-filter">
                                     <v-btn :ripple="false" v-for="category in categories" :key="category.title"
                                         :class="category.class + `${category.title === filter ? ' active ' : ''}`"
@@ -32,76 +32,85 @@
                                     </v-btn>
                                 </div>
                             </v-col>
-                            <v-col cols="8">
-                                <VueSlickCarousel v-bind="settings" @init="" @reinit="getFilter" ref="carousel">
-                                    <template v-if="filter == 'Kabar'">
-                                        <div class="feed-item overflow-hidden" v-for="(feed, i) in feeds" :key="i">
-                                            <v-overlay value="true" color="primary" absolute>
-                                                <div class="feed-content">
-                                                    <v-img :src="feed.src" :lazy-src="feed.src" aspect-ratio="1"
-                                                        class="feed-img fill-height"></v-img>
-                                                    <h2 class="text-capitalize">{{ feed.title }}</h2>
-                                                    <span class="feed-category">{{ feed.category }}</span>
-                                                    <v-btn :ripple="false" :href="feed.link" target="_blank" text
-                                                        color="white" class="text-capitalize btn-default no-hover" dark>
-                                                        Read more >
-                                                    </v-btn>
-                                                </div>
-                                            </v-overlay>
-                                        </div>
-                                    </template>
-                                    <template v-else-if="filter == 'Renungan'">
-                                        <div class="feed-item overflow-hidden" v-for="(renungan, i) in renungans"
-                                            :key="i">
-                                            <v-overlay value="true" color="primary" absolute>
-                                                <div class="feed-content">
-                                                    <v-img :src="renungan.src" :lazy-src="renungan.src" aspect-ratio="1"
-                                                        class="feed-img fill-height"></v-img>
-                                                    <h2 class="text-capitalize">{{ renungan.title }}</h2>
-                                                    <span class="feed-category">{{ renungan.category }}</span>
-                                                    <v-btn :ripple="false" :href="renungan.link" target="_blank" text
-                                                        color="white" class="text-capitalize btn-default no-hover" dark>
-                                                        Read more >
-                                                    </v-btn>
-                                                </div>
-                                            </v-overlay>
-                                        </div>
-                                    </template>
-                                    <template v-else-if="filter == 'Organisasi'">
-                                        <div class="feed-item overflow-hidden" v-for="(organisasi, i) in organisasis"
-                                            :key="i">
-                                            <v-overlay value="true" color="primary" absolute>
-                                                <div class="feed-content">
-                                                    <v-img :src="organisasi.src" :lazy-src="organisasi.src"
-                                                        aspect-ratio="1" class="feed-img fill-height"></v-img>
-                                                    <h2 class="text-capitalize">{{ organisasi.title }}</h2>
-                                                    <span class="feed-category">{{ organisasi.category }}</span>
-                                                    <v-btn :ripple="false" :href="organisasi.link" target="_blank" text
-                                                        color="white" class="text-capitalize btn-default no-hover" dark>
-                                                        Read more >
-                                                    </v-btn>
-                                                </div>
-                                            </v-overlay>
-                                        </div>
-                                    </template>
-                                    <template v-else-if="filter == 'Download'">
-                                        <div class="feed-item overflow-hidden" v-for="(download, i) in downloads"
-                                            :key="i">
-                                            <v-overlay value="true" color="primary" absolute>
-                                                <div class="feed-content">
-                                                    <v-img :src="download.src" :lazy-src="download.src" aspect-ratio="1"
-                                                        class="feed-img fill-height"></v-img>
-                                                    <h2 class="text-capitalize">{{ download.title }}</h2>
-                                                    <span class="feed-category">{{ download.category }}</span>
-                                                    <v-btn :ripple="false" :href="download.link" target="_blank" text
-                                                        color="white" class="text-capitalize btn-default no-hover" dark>
-                                                        Read more >
-                                                    </v-btn>
-                                                </div>
-                                            </v-overlay>
-                                        </div>
-                                    </template>
-                                </VueSlickCarousel>
+                            <v-col cols="8" class="pt-0">
+                                <div class="loading-box">
+                                    <v-overlay :value="overlay" absolute>
+                                        <v-progress-circular indeterminate size="64"></v-progress-circular>
+                                    </v-overlay>
+                                    <VueSlickCarousel v-bind="settings" @reinit="getFilter" ref="carousel">
+                                        <template v-if="filter == 'Kabar'">
+                                            <div class="feed-item overflow-hidden" v-for="(feed, i) in feeds" :key="i">
+                                                <v-overlay value="true" color="primary" absolute>
+                                                    <div class="feed-content">
+                                                        <v-img :src="feed.src" :lazy-src="feed.src" aspect-ratio="1"
+                                                            class="feed-img fill-height"></v-img>
+                                                        <h2 class="text-capitalize">{{ feed.title }}</h2>
+                                                        <span class="feed-category">{{ feed.category }}</span>
+                                                        <v-btn :ripple="false" :href="feed.link" target="_blank" text
+                                                            color="white" class="text-capitalize btn-default no-hover"
+                                                            dark>
+                                                            Read more >
+                                                        </v-btn>
+                                                    </div>
+                                                </v-overlay>
+                                            </div>
+                                        </template>
+                                        <template v-else-if="filter == 'Renungan'">
+                                            <div class="feed-item overflow-hidden" v-for="(renungan, i) in renungans"
+                                                :key="i">
+                                                <v-overlay value="true" color="primary" absolute>
+                                                    <div class="feed-content">
+                                                        <v-img :src="renungan.src" :lazy-src="renungan.src"
+                                                            aspect-ratio="1" class="feed-img fill-height"></v-img>
+                                                        <h2 class="text-capitalize">{{ renungan.title }}</h2>
+                                                        <span class="feed-category">{{ renungan.category }}</span>
+                                                        <v-btn :ripple="false" :href="renungan.link" target="_blank"
+                                                            text color="white"
+                                                            class="text-capitalize btn-default no-hover" dark>
+                                                            Read more >
+                                                        </v-btn>
+                                                    </div>
+                                                </v-overlay>
+                                            </div>
+                                        </template>
+                                        <template v-else-if="filter == 'Organisasi'">
+                                            <div class="feed-item overflow-hidden"
+                                                v-for="(organisasi, i) in organisasis" :key="i">
+                                                <v-overlay value="true" color="primary" absolute>
+                                                    <div class="feed-content">
+                                                        <v-img :src="organisasi.src" :lazy-src="organisasi.src"
+                                                            aspect-ratio="1" class="feed-img fill-height"></v-img>
+                                                        <h2 class="text-capitalize">{{ organisasi.title }}</h2>
+                                                        <span class="feed-category">{{ organisasi.category }}</span>
+                                                        <v-btn :ripple="false" :href="organisasi.link" target="_blank"
+                                                            text color="white"
+                                                            class="text-capitalize btn-default no-hover" dark>
+                                                            Read more >
+                                                        </v-btn>
+                                                    </div>
+                                                </v-overlay>
+                                            </div>
+                                        </template>
+                                        <template v-else-if="filter == 'Download'">
+                                            <div class="feed-item overflow-hidden" v-for="(download, i) in downloads"
+                                                :key="i">
+                                                <v-overlay value="true" color="primary" absolute>
+                                                    <div class="feed-content">
+                                                        <v-img :src="download.src" :lazy-src="download.src"
+                                                            aspect-ratio="1" class="feed-img fill-height"></v-img>
+                                                        <h2 class="text-capitalize">{{ download.title }}</h2>
+                                                        <span class="feed-category">{{ download.category }}</span>
+                                                        <v-btn :ripple="false" :href="download.link" target="_blank"
+                                                            text color="white"
+                                                            class="text-capitalize btn-default no-hover" dark>
+                                                            Read more >
+                                                        </v-btn>
+                                                    </div>
+                                                </v-overlay>
+                                            </div>
+                                        </template>
+                                    </VueSlickCarousel>
+                                </div>
                             </v-col>
                         </v-row>
                     </v-card>
@@ -129,7 +138,7 @@ export default {
             "slidesPerRow": 1,
             "slidesToScroll": 2,
             "initialSlide": 0,
-            "autoplay":true,
+            "autoplay": false,
             "responsive": [
                 {
                     "breakpoint": 1024,
@@ -383,13 +392,16 @@ export default {
             }
         ],
         filter: 'Kabar',
-        isActive: false
+        isActive: false,
+        overlay: false
     }),
     methods: {
         getFilter(event) {
+            this.overlay = true;
             var filtered = event;
             this.filter = filtered;
             this.$refs.carousel.goTo('0');
+            setTimeout(() => (this.overlay = false), 900);
             console.log(filtered);
         },
         slideNext() {

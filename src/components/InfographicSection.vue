@@ -3,7 +3,7 @@
         <v-container>
             <v-row>
                 <v-col cols="12">
-                    <v-card :elevation="0" color="transparent" class="py-8 pb-10 px-3" tile>
+                    <v-card :elevation="0" color="transparent" class="pb-10 px-3" tile>
                         <v-row>
                             <v-col cols="12">
                                 <v-card-title

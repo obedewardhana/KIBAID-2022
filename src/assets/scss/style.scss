@@ -191,7 +191,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-left: -25px;
       .btn-control {
         width: 50%;
         border-radius: 0;
@@ -200,7 +199,7 @@
         display: flex;
         align-items: center;
         background: var(--v-secondary-base);
-        color:var(--v-white-base);
+        color: var(--v-white-base);
       }
     }
     .feed-item {
@@ -310,6 +309,15 @@
       z-index: 2;
       height: 40px;
       right: 0;
+    }
+    .loading-box {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: relative;
+      overflow: hidden;
+      top:0;
+      right:0;
     }
   }
   .no-hover:before {

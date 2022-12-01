@@ -1,6 +1,6 @@
 <template>
   <section id="hero">
-    <v-parallax src="@/assets/img/img-pray1.jpg" height="750" style="margin-bottom:-150px">
+    <v-parallax src="@/assets/img/img-pray1.jpg" class="fill-height" height="750" style="margin-bottom:-150px">
       <v-overlay value="true" color="primary" absolute>
         <v-row align="center" justify="center" class="text-center">
           <v-col cols="12" md="12" xl="12">

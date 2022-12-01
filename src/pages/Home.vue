@@ -3,7 +3,8 @@
         <HomeSectionComp />
         <FeedSectionComp />
         <FaithSectionComp />
-        <InfographicSectionComp />
+        <InfographicSectionComp />        
+        <ChurchSectionComp />
         <DonationSectionComp />
     </div>
 </template>
@@ -12,6 +13,7 @@
 import HomeSectionComp from "@/components/HomeSection.vue";
 import FeedSectionComp from "@/components/FeedSection.vue";
 import FaithSectionComp from "@/components/FaithSection.vue";
+import ChurchSectionComp from "@/components/ChurchSection.vue";
 import InfographicSectionComp from "@/components/InfographicSection.vue";
 import DonationSectionComp from "@/components/DonationSection.vue";
 export default {
@@ -20,7 +22,8 @@ export default {
         HomeSectionComp,
         FeedSectionComp,
         FaithSectionComp,
-        InfographicSectionComp,
+        InfographicSectionComp,        
+        ChurchSectionComp,
         DonationSectionComp
     },
 };
