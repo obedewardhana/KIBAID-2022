@@ -44,7 +44,13 @@
                                                     <div class="feed-content">
                                                         <v-img :src="feed.src" :lazy-src="feed.src" aspect-ratio="1"
                                                             class="feed-img fill-height"></v-img>
-                                                        <h2 class="text-capitalize">{{ feed.title }}</h2>
+                                                        <div class="feed-item-header text-left">
+                                                            <h2 class="text-capitalize">{{ feed.title }}</h2>
+                                                            <p class="text-small gray--text">
+                                                                <v-icon size="12" class="mr-2">mdi-calendar</v-icon>22
+                                                                Agustus 2022
+                                                            </p>
+                                                        </div>
                                                         <span class="feed-category">{{ feed.category }}</span>
                                                         <v-btn :ripple="false" :href="feed.link" target="_blank" text
                                                             color="white" class="text-capitalize btn-default no-hover"
@@ -62,7 +68,13 @@
                                                     <div class="feed-content">
                                                         <v-img :src="renungan.src" :lazy-src="renungan.src"
                                                             aspect-ratio="1" class="feed-img fill-height"></v-img>
-                                                        <h2 class="text-capitalize">{{ renungan.title }}</h2>
+                                                        <div class="feed-item-header text-left">
+                                                            <h2 class="text-capitalize">{{ renungan.title }}</h2>
+                                                            <p class="text-small gray--text">
+                                                                <v-icon size="12" class="mr-2">mdi-calendar</v-icon>22
+                                                                Agustus 2022
+                                                            </p>
+                                                        </div>
                                                         <span class="feed-category">{{ renungan.category }}</span>
                                                         <v-btn :ripple="false" :href="renungan.link" target="_blank"
                                                             text color="white"
@@ -80,8 +92,15 @@
                                                     <div class="feed-content">
                                                         <v-img :src="organisasi.src" :lazy-src="organisasi.src"
                                                             aspect-ratio="1" class="feed-img fill-height"></v-img>
-                                                        <h2 class="text-capitalize">{{ organisasi.title }}</h2>
-                                                        <span class="feed-category">{{ organisasi.category }}</span>
+                                                        <div class="feed-item-header text-left">
+                                                            <h2 class="text-capitalize">{{ organisasi.title }}</h2>
+                                                            <p class="text-small gray--text">
+                                                                <v-icon size="12" class="mr-2">mdi-calendar</v-icon>22
+                                                                Agustus 2022
+                                                            </p>
+                                                        </div>
+                                                        <span class="feed-category">{{ organisasi.category
+                                                        }}</span>
                                                         <v-btn :ripple="false" :href="organisasi.link" target="_blank"
                                                             text color="white"
                                                             class="text-capitalize btn-default no-hover" dark>
@@ -98,7 +117,13 @@
                                                     <div class="feed-content">
                                                         <v-img :src="download.src" :lazy-src="download.src"
                                                             aspect-ratio="1" class="feed-img fill-height"></v-img>
-                                                        <h2 class="text-capitalize">{{ download.title }}</h2>
+                                                        <div class="feed-item-header text-left">
+                                                            <h2 class="text-capitalize">{{ download.title }}</h2>
+                                                            <p class="text-small gray--text">
+                                                                <v-icon size="12" class="mr-2">mdi-calendar</v-icon>22
+                                                                Agustus 2022
+                                                            </p>
+                                                        </div>
                                                         <span class="feed-category">{{ download.category }}</span>
                                                         <v-btn :ripple="false" :href="download.link" target="_blank"
                                                             text color="white"
