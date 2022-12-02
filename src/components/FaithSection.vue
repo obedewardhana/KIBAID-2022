@@ -7,7 +7,7 @@
                         <v-row>
                             <v-col cols="12">
                                 <v-card-title
-                                    class="text-h5 font-weight-bold primary--text text-uppercase justify-center mb-5">
+                                    class="text-h5 font-weight-bold primary--text text-uppercase justify-center text-center mb-5">
                                     Pengakuan Iman Kami
                                 </v-card-title>
                                 <v-card-text>
