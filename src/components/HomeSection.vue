@@ -49,9 +49,6 @@
 <script>
 export default {
   name: "HomeSectionComp",
-  data() {
-    
-  },
   watch: {
     dialog(value) {
       if (!value) {
@@ -79,7 +76,7 @@ export default {
     pause() {
       this.player.pauseVideo();
     },
-  },
+  }
 };
 </script>
 

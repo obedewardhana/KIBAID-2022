@@ -28,6 +28,7 @@
     letter-spacing: normal;
     word-break: break-word;
     line-height: 1.5;
+    letter-spacing: 0;
   }
   p {
     font-size: 18px;
@@ -316,8 +317,21 @@
       height: auto;
       position: relative;
       overflow: hidden;
-      top:0;
-      right:0;
+      top: 0;
+      right: 0;
+    }
+    .map-area {
+      svg {
+        fill:var(--v-bluesea-base);
+        path {
+          &:focus,
+          &:hover {
+            cursor: pointer;
+            opacity: 0.75;
+            outline:none;
+          }
+        }
+      }
     }
   }
   .no-hover:before {

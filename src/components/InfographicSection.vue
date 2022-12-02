@@ -8,7 +8,7 @@
                             <v-col cols="12">
                                 <v-card-title
                                     class="text-h5 font-weight-bold bluesea--text text-uppercase justify-center mb-5">
-                                    Infographic
+                                    Gereja Kami
                                 </v-card-title>
                                 <v-card-text>
                                     <v-row>
