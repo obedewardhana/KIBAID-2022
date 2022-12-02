@@ -31,7 +31,7 @@
             <v-btn class="justify-start" text @click="$vuetify.goTo('#features')">
               <span class="mr-2 primary--text text-capitalize">Tentang Kami</span>
             </v-btn>
-            <v-btn class="justify-start" text @click="$vuetify.goTo('#church')">
+            <v-btn class="justify-start" text @click="$vuetify.goTo('#infographic')">
               <span class="mr-2 primary--text text-capitalize">Gereja</span>
             </v-btn>
             <v-btn class="justify-start" text @click="$vuetify.goTo('#feed')">

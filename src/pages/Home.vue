@@ -1,8 +1,5 @@
 <template>
     <div>
-        <v-overlay :value="overlay">
-            <v-progress-circular indeterminate size="64"></v-progress-circular>
-        </v-overlay>
         <HomeSectionComp />
         <FeedSectionComp />
         <FaithSectionComp />
@@ -30,15 +27,11 @@ export default {
         DonationSectionComp
     },
     data: () => ({
-        overlay: true
+        
     }),
     methods: {
-        loaded() {
-            setTimeout(() => (this.overlay = false), 900);
-        }
     },
     mounted() {
-        this.loaded();
     }
 };
 </script>

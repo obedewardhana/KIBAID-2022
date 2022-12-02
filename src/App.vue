@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <LoadingComp v-if="isLoading"></LoadingComp>
     <NavigationComp :color="color" :flat="flat" />
     <v-main class="pt-0">
       <router-view />
@@ -19,18 +20,21 @@ import '@/assets/scss/responsive.scss';
 import Vue from "vue";
 import NavigationComp from "./components/Navigation";
 import FooterComp from "./components/Footer";
+import LoadingComp from "@/components/Loading";
 
 export default Vue.extend({
   name: "App",
   components: {
     NavigationComp,
-    FooterComp
+    FooterComp,
+    LoadingComp
   },
 
   data: () => ({
     fab: null,
     color: "",
     flat: null,
+    isLoading: true
   }),
 
   created() {
@@ -63,5 +67,11 @@ export default Vue.extend({
       this.$vuetify.goTo(0);
     },
   },
+
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1500);
+  }
 });
 </script>

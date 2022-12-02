@@ -53,7 +53,7 @@
                 <v-btn text @click="$vuetify.goTo('#features')">
                   <span class="mr-2">Tentang Kami</span>
                 </v-btn>
-                <v-btn text @click="$vuetify.goTo('#church')">
+                <v-btn text @click="$vuetify.goTo('#infographic')">
                   <span class="mr-2">Gereja</span>
                 </v-btn>
                 <v-btn text @click="$vuetify.goTo('#feed')">
@@ -91,7 +91,7 @@ export default {
     items: [
       ["mdi-home-outline", "Home", "#hero"],
       ["mdi-information-outline", "Tentang Kami", "#features"],
-      ["mdi-church-outline", "Gereja", "#church"],
+      ["mdi-church-outline", "Gereja", "#infographic"],
       ["mdi-newspaper", "Kabar", "#feed"],
       ["mdi-email-outline", "Kontak", "#contact"],
     ],
