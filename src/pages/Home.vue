@@ -1,9 +1,12 @@
 <template>
     <div>
+        <v-overlay :value="overlay">
+            <v-progress-circular indeterminate size="64"></v-progress-circular>
+        </v-overlay>
         <HomeSectionComp />
         <FeedSectionComp />
         <FaithSectionComp />
-        <InfographicSectionComp />        
+        <InfographicSectionComp />
         <ChurchSectionComp />
         <DonationSectionComp />
     </div>
@@ -22,10 +25,21 @@ export default {
         HomeSectionComp,
         FeedSectionComp,
         FaithSectionComp,
-        InfographicSectionComp,        
+        InfographicSectionComp,
         ChurchSectionComp,
         DonationSectionComp
     },
+    data: () => ({
+        overlay: true
+    }),
+    methods: {
+        loaded() {
+            setTimeout(() => (this.overlay = false), 900);
+        }
+    },
+    mounted() {
+        this.loaded();
+    }
 };
 </script>
 <style lang="scss" scoped>

@@ -38,7 +38,7 @@
             <div class="d-flex align-center">
                 <v-btn :ripple="false" width="140" large depressed link @click.stop="$router.push('/home').catch(()=>{});"  color="transparent" elevation="0" class="no-hover"
                   rounded>
-                  <v-toolbar-title class="d-flex align-center">
+                  <v-toolbar-title class="d-flex align-center" style="width:150px">
                     <v-img src="@/assets/img/logo-kibaid.png" max-width="50px" width="100%" height="100%"
                       object-fit="contain" class="my-auto mr-3" />
                     <h1 class="title text-uppercase" style="line-height:1.2">Sinode <br>Kibaid</h1>

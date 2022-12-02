@@ -17,7 +17,11 @@
                                                 <img src="@/assets/img/icon-church.png" alt="Logo" />
                                                 <div class="info-content">
                                                     <h1>Gereja Lokal</h1>
-                                                    <p>275</p>
+                                                    <p>
+                                                        <span data-purecounter-start="0" data-purecounter-end="275"
+                                                            class="purecounter">
+                                                        </span>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </v-col>
@@ -26,7 +30,11 @@
                                                 <img src="@/assets/img/icon-bible.png" alt="Logo" />
                                                 <div class="info-content">
                                                     <h1>Pendeta/Penginjil</h1>
-                                                    <p>513</p>
+                                                    <p>
+                                                        <span data-purecounter-start="0" data-purecounter-end="513"
+                                                            class="purecounter">
+                                                        </span>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </v-col>
@@ -35,7 +43,11 @@
                                                 <img src="@/assets/img/icon-user.png" alt="Logo" />
                                                 <div class="info-content">
                                                     <h1>Jemaat</h1>
-                                                    <p>35.800</p>
+                                                    <p>
+                                                        <span data-purecounter-start="0" data-purecounter-end="35800"
+                                                            class="purecounter">
+                                                        </span>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </v-col>
@@ -44,7 +56,11 @@
                                                 <img src="@/assets/img/icon-earth.png" alt="Logo" />
                                                 <div class="info-content">
                                                     <h1>Provinsi</h1>
-                                                    <p>27</p>
+                                                    <p>
+                                                        <span data-purecounter-start="0" data-purecounter-end="27"
+                                                            class="purecounter">
+                                                        </span>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </v-col>
@@ -60,10 +76,25 @@
 </template>
 
 <script>
+import PureCounter from '@srexi/purecounterjs'
 export default {
     name: "InfographicSectionComp",
+    components: {
+        PureCounter
+    },
     data: () => ({
-
-    })
+    }),
+    methods: {
+        counter() {
+            new PureCounter({
+                duration: 2,
+                once: false,
+                repeat: true,
+            });
+        }
+    },
+    mounted() {
+        this.counter()
+    }
 }
 </script>
