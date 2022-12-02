@@ -23,10 +23,10 @@
     </v-parallax>
     <v-container id="features" class="mt-2">
       <v-row align="center" justify="center">
-        <v-col cols="12">
-          <v-card :elevation="0" color="gray" class="py-8 px-3 mx-3 overflow-hidden" tile style="position:relative;">
+        <v-col cols="12" >
+          <v-card :elevation="0" color="gray" class="py-8 px-3 overflow-hidden" tile style="position:relative;">
             <v-row>
-              <v-col cols="12" md="6" xl="6">
+              <v-col cols="12" md="6" xl="6" class="pc-0">
                 <v-card-title class="text-h5 font-weight-bold primary--text" style="z-index:2;position:relative;">
                   TUJUAN KAMI
                 </v-card-title>

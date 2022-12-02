@@ -23,7 +23,8 @@
                                         <li>
                                             <v-btn large depressed target="_blank" :href="church.link">
                                                 <div class="map-church-header">
-                                                    <v-icon size="12" class="mr-2">mdi-cross</v-icon>{{ church.title }}
+                                                   
+                                                    <div class="text-small">{{ church.title }}</div>
                                                 </div>
                                                 <p class="text-capitalize map-info-category">{{ church.category }}</p>
                                             </v-btn>

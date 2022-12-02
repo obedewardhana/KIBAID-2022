@@ -359,8 +359,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         margin: 0;
-        padding: 0;
-        padding-top: 20px;
+        padding:20px 10px 10px;
         background: var(--v-graylight-base);
         border-radius:11px;
         border:1px solid var(--v-white-base);
@@ -383,6 +382,9 @@
             .v-btn__content{
               flex-direction: column;
               align-items:flex-start;
+              .map-church-header{
+                display:flex;
+              }
               .map-info-category{
                 padding:2px 8px;
                 border-radius:5px;
