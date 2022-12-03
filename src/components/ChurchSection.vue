@@ -21,21 +21,19 @@
                                 <v-overlay :value="overlay" absolute>
                                     <v-progress-circular indeterminate size="64"></v-progress-circular>
                                 </v-overlay>
-                                <template v-for="(church, i) in churches">
-                                    <template v-if="clickedLocation == church.province">
-                                        <li>
-                                            <v-btn large depressed target="_blank" :href="church.link">
-                                                <div class="map-church-header">
-
-                                                    <div class="text-small">{{ church.title }}</div>
-                                                </div>
-                                                <p class="text-capitalize map-info-category">{{ church.category }}</p>
-                                            </v-btn>
-                                        </li>
-                                    </template>
+                                <template v-for="(church, i) in churchArr">
+                                    <li>
+                                        <v-btn large depressed target="_blank" :href="church.link">
+                                            <div class="map-church-header">
+                                                <div class="text-small">{{ church.title }}</div>
+                                            </div>
+                                            <p class="text-capitalize map-info-category">{{ church.category }}</p>
+                                        </v-btn>
+                                    </li>
                                 </template>
-
                             </ul>
+                            <v-pagination class="pagination mb-2 mt-8" v-model="page" :length="pages"
+                                @input="updatePage"></v-pagination>
                         </div>
                     </v-card>
                 </v-col>
@@ -333,7 +331,7 @@ export default {
                     category: 'Klasis',
                     link: ''
                 }
-                
+
             ],
             select: null,
             items: [
@@ -356,8 +354,17 @@ export default {
                 { province: 'Bali' },
                 { province: 'Papua' }
             ],
-            overlay: false
+            overlay: false,
+            page: 1,
+            pageSize: 6,
+            listCount: 0,
+            churchArr: [],
+            clickedArr: []
         };
+    },
+    created() {
+        this.initPage();
+        this.updatePage(this.page);
     },
     methods: {
         pointLocation(event) {
@@ -375,10 +382,10 @@ export default {
         clickLocation(event) {
             this.overlay = true;
             setTimeout(() => (this.overlay = false), 900);
-            if (jawasumatra.includes(getLocationName(event.target))) {                
+            if (jawasumatra.includes(getLocationName(event.target))) {
                 this.clickedLocation = "Jawa & Sumatera";
                 this.select = "Jawa & Sumatera";
-            } else if (papua.includes(getLocationName(event.target))) {  
+            } else if (papua.includes(getLocationName(event.target))) {
                 this.clickedLocation = "Papua";
                 this.select = "Papua";
             } else {
@@ -388,7 +395,15 @@ export default {
             this.$nextTick(() =>
                 document.getElementById('church').scrollIntoView({ behavior: 'smooth' })
             );
-            // window.open(URL[event.target.id], '_blank');
+            const filteredList = this.churches.filter((e) => e.province === this.clickedLocation).map((e) => { return { title: e.title, province: e.province,  category: e.category, link:e.link } });
+            console.log(filteredList.length);
+            this.listCount = filteredList.length;
+            if (this.listCount < this.pageSize) {
+                this.churchArr = filteredList;
+            } else {
+                this.churchArr = filteredList.slice(0, this.pageSize);
+            }
+
         },
         onChange(event) {
             console.log(this.select);
@@ -398,6 +413,34 @@ export default {
             this.$nextTick(() =>
                 document.getElementById('church').scrollIntoView({ behavior: 'smooth' })
             );
+            const filteredList = this.churches.filter((e) => e.province === this.select).map((e) => { return { title: e.title, province: e.province,  category: e.category, link:e.link } });
+            console.log(filteredList.length);
+            this.listCount = filteredList.length;
+            if (this.listCount < this.pageSize) {
+                this.churchArr = filteredList;
+            } else {
+                this.churchArr = filteredList.slice(0, this.pageSize);
+            }
+        },
+        initPage() {
+            this.listCount = this.churches.length;
+            if (this.listCount < this.pageSize) {
+                this.churchArr = this.churches;
+            } else {
+                this.churchArr = this.churches.slice(0, this.pageSize);
+            }
+        },
+        updatePage(pageIndex) {
+            let start = (pageIndex - 1) * this.pageSize;
+            let end = pageIndex * this.pageSize;
+            this.churchArr = this.churches.slice(start, end);
+            this.page = pageIndex;
+        },
+    },
+    computed: {
+        pages() {
+            if (this.pageSize == null || this.listCount == null) return 0;
+            return Math.ceil(this.listCount / this.pageSize);
         }
     }
 }
