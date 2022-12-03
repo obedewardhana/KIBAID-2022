@@ -27,6 +27,16 @@
             }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item href="mailto:admin@sinodekibaid.org">
+          <v-list-item-icon class="justify-center white--text">
+            <v-icon class="white--text">mdi-email-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title class="subtitile-1 white--text">
+                Kontak
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -59,7 +69,7 @@
                 <v-btn text @click="$vuetify.goTo('#feed')">
                   <span class="mr-2">Kabar</span>
                 </v-btn>
-                <v-btn rounded outlined text @click="$vuetify.goTo('#contact')">
+                <v-btn rounded outlined text href="mailto:admin@sinodekibaid.org">
                   <span class="mr-2">Kontak</span>
                 </v-btn>
               </div>
@@ -93,7 +103,6 @@ export default {
       ["mdi-information-outline", "Tentang Kami", "#features"],
       ["mdi-church-outline", "Gereja", "#infographic"],
       ["mdi-newspaper", "Kabar", "#feed"],
-      ["mdi-email-outline", "Kontak", "#contact"],
     ],
   }),
   props: {
