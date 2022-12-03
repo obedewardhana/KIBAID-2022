@@ -8,8 +8,8 @@ Responsive
       justify-content: flex-start;
     }
     .v-card {
-      p{
-        font-size:14px;
+      p {
+        font-size: 14px;
       }
       .bg-infographic {
         &:nth-child(2) {
@@ -71,12 +71,12 @@ Responsive
             }
           }
         }
-      }      
-      .map-info{
-        .map-info-content{
+      }
+      .map-info {
+        .map-info-content {
           li {
-            width:calc(50% - 20px);            
-            margin-bottom:10px;
+            width: calc(50% - 20px);
+            margin-bottom: 10px;
           }
         }
       }
@@ -95,9 +95,17 @@ Responsive
 
 @media screen and (max-width: 480px) {
   .v-application {
-    .v-parallax{
-      height:450px!important;
-      margin-bottom:-80px!important;
+    .v-parallax {
+      height: 450px !important;
+      margin-bottom: -80px !important;
+      .v-parallax__image {
+        top: 0;
+        bottom: unset;
+        transform: unset !important;
+        left: 0;
+        height: 100%;
+        position: fixed;
+      }
     }
     .v-card {
       .faith-item {
@@ -123,7 +131,7 @@ Responsive
       }
       .feed-filter {
         .v-btn {
-          font-size: 14px;          
+          font-size: 14px;
           .v-icon {
             display: none;
           }
@@ -138,12 +146,12 @@ Responsive
           }
         }
       }
-      .map-info{
-        .map-info-content{
+      .map-info {
+        .map-info-content {
           li {
-            width:100%;
-            margin:0;
-            margin-bottom:10px;
+            width: 100%;
+            margin: 0;
+            margin-bottom: 10px;
           }
         }
       }

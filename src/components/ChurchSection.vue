@@ -32,8 +32,10 @@
                                     </li>
                                 </template>
                             </ul>
-                            <v-pagination class="pagination mb-2 mt-8" v-model="page" :length="pages"
-                                @input="updatePage"></v-pagination>
+                            <div v-if="(pages > 1)">
+                                <v-pagination class="pagination mb-2 mt-8" v-model="page" :length="pages"
+                                    @input="updatePage"></v-pagination>
+                            </div>
                         </div>
                     </v-card>
                 </v-col>
@@ -359,7 +361,9 @@ export default {
             pageSize: 6,
             listCount: 0,
             churchArr: [],
-            clickedArr: []
+            clickedArr: [],
+            filterArr: [],
+            selectArr: []
         };
     },
     created() {
@@ -395,13 +399,13 @@ export default {
             this.$nextTick(() =>
                 document.getElementById('church').scrollIntoView({ behavior: 'smooth' })
             );
-            const filteredList = this.churches.filter((e) => e.province === this.clickedLocation).map((e) => { return { title: e.title, province: e.province,  category: e.category, link:e.link } });
-            console.log(filteredList.length);
-            this.listCount = filteredList.length;
+            const filterArr = this.churches.filter((e) => e.province === this.clickedLocation).map((e) => { return { title: e.title, province: e.province, category: e.category, link: e.link } });
+            console.log(filterArr);
+            this.listCount = filterArr.length;
             if (this.listCount < this.pageSize) {
-                this.churchArr = filteredList;
+                this.churchArr = filterArr;
             } else {
-                this.churchArr = filteredList.slice(0, this.pageSize);
+                this.churchArr = filterArr.slice(0, this.pageSize);
             }
 
         },
@@ -413,28 +417,66 @@ export default {
             this.$nextTick(() =>
                 document.getElementById('church').scrollIntoView({ behavior: 'smooth' })
             );
-            const filteredList = this.churches.filter((e) => e.province === this.select).map((e) => { return { title: e.title, province: e.province,  category: e.category, link:e.link } });
-            console.log(filteredList.length);
-            this.listCount = filteredList.length;
+            const selectArr = this.churches.filter((e) => e.province === this.select).map((e) => { return { title: e.title, province: e.province, category: e.category, link: e.link } });
+            console.log(selectArr);
+            this.listCount = selectArr.length;
             if (this.listCount < this.pageSize) {
-                this.churchArr = filteredList;
+                this.churchArr = selectArr;
             } else {
-                this.churchArr = filteredList.slice(0, this.pageSize);
+                this.churchArr = selectArr.slice(0, this.pageSize);
             }
         },
         initPage() {
-            this.listCount = this.churches.length;
-            if (this.listCount < this.pageSize) {
-                this.churchArr = this.churches;
+
+            if (this.clickedLocation != null) {
+                const filterAr = this.churches.filter((e) => e.province === this.clickedLocation).map((e) => { return { title: e.title, province: e.province, category: e.category, link: e.link } });
+                this.listCount = filterAr.length;
+                if (this.listCount < this.pageSize) {
+                    this.churchArr = this.filterAr;
+                } else {
+                    this.churchArr = this.filterAr.slice(0, this.pageSize);
+                }
+            } else if (this.select != null) {
+                const selectAr = this.churches.filter((e) => e.province === this.select).map((e) => { return { title: e.title, province: e.province, category: e.category, link: e.link } });
+                this.listCount = selectAr.length;
+                if (this.listCount < this.pageSize) {
+                    this.churchArr = this.selectAr;
+                } else {
+                    this.churchArr = this.selectAr.slice(0, this.pageSize);
+                }
             } else {
-                this.churchArr = this.churches.slice(0, this.pageSize);
+                this.listCount = this.churches.length;
+                if (this.listCount < this.pageSize) {
+                    this.churchArr = this.churches;
+                } else {
+                    this.churchArr = this.churches.slice(0, this.pageSize);
+                }
+
             }
         },
         updatePage(pageIndex) {
-            let start = (pageIndex - 1) * this.pageSize;
-            let end = pageIndex * this.pageSize;
-            this.churchArr = this.churches.slice(start, end);
-            this.page = pageIndex;
+
+            if (this.clickedLocation != null) {
+                const selectAr = this.churches.filter((e) => e.province === this.clickedLocation).map((e) => { return { title: e.title, province: e.province, category: e.category, link: e.link } });
+                let start = (pageIndex - 1) * this.pageSize;
+                let end = pageIndex * this.pageSize;
+                this.churchArr = selectAr.slice(start, end);
+                this.page = pageIndex;
+            } else if (this.select != null) {
+                const selectAr = this.churches.filter((e) => e.province === this.select).map((e) => { return { title: e.title, province: e.province, category: e.category, link: e.link } });
+                let start = (pageIndex - 1) * this.pageSize;
+                let end = pageIndex * this.pageSize;
+                this.churchArr = selectAr.slice(start, end);
+                this.page = pageIndex;
+            } else {
+                const selectAr = this.churches;
+                let start = (pageIndex - 1) * this.pageSize;
+                let end = pageIndex * this.pageSize;
+                this.churchArr = selectAr.slice(start, end);
+                this.page = pageIndex;
+            }
+            // console.log(filter2); lolos
+            console.log(this.selectAr);
         },
     },
     computed: {
