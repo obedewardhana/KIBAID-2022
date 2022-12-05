@@ -27,7 +27,7 @@
     font-family: "Poppins", sans-serif !important;
     letter-spacing: normal;
     word-break: break-word;
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: 0;
   }
   p {
@@ -56,6 +56,10 @@
     align-items: center;
     height: 100%;
     padding: 12px;
+  }
+  .nav-link {
+    letter-spacing: 0;
+    text-decoration: none;
   }
   .v-list {
     .v-list-item {
@@ -353,12 +357,12 @@
           padding: 0 10px;
         }
         .select-map {
-          font-size:16px;
+          font-size: 16px;
           text-transform: uppercase;
-          font-weight:bold;
-          font-family:'Poppins',sans-serif;
+          font-weight: bold;
+          font-family: "Poppins", sans-serif;
           .v-select__selection {
-            color:var(--v-bluesea-base);
+            color: var(--v-bluesea-base);
           }
         }
       }
@@ -393,9 +397,9 @@
               align-items: flex-start;
               .map-church-header {
                 display: flex;
-                div{
-                  white-space:break-spaces;
-                  text-align:left;
+                div {
+                  white-space: break-spaces;
+                  text-align: left;
                 }
               }
               .map-info-category {
@@ -414,17 +418,17 @@
     }
   }
   .no-hover {
-    &:hover{
+    &:hover {
       &:before {
-        display: none!important;;
+        display: none !important;
         &:active {
-          display: none!important;
+          display: none !important;
         }
       }
     }
   }
-  .theme--dark.v-btn.no-hover:hover:before{
-    opacity:0!important;
+  .theme--dark.v-btn.no-hover:hover:before {
+    opacity: 0 !important;
   }
   section {
     position: relative;
@@ -439,8 +443,14 @@
       margin-right: -8px;
       z-index: 1;
     }
-    &.bg--secondary {
+    &.bg--bluelighter {
       background-color: var(--v-bluelighter-base);
+    }
+    &.bg--secondary {
+      background-color: var(--v-secondary-base);
+    }
+    &.bg--gray {
+      background-color: var(--v-gray-base);
     }
   }
 }

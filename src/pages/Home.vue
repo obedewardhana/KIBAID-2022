@@ -10,12 +10,12 @@
 </template>
   
 <script>
-import HomeSectionComp from "@/components/HomeSection.vue";
-import FeedSectionComp from "@/components/FeedSection.vue";
-import FaithSectionComp from "@/components/FaithSection.vue";
-import ChurchSectionComp from "@/components/ChurchSection.vue";
-import InfographicSectionComp from "@/components/InfographicSection.vue";
-import DonationSectionComp from "@/components/DonationSection.vue";
+import HomeSectionComp from "@/components/Home/HomeSection.vue";
+import FeedSectionComp from "@/components/Feeds/FeedSection.vue";
+import FaithSectionComp from "@/components/About/FaithSection.vue";
+import ChurchSectionComp from "@/components/Church/ChurchSection.vue";
+import InfographicSectionComp from "@/components/About/InfographicSection.vue";
+import DonationSectionComp from "@/components/Donation/DonationSection.vue";
 export default {
     name: "HomeView",
     components: {

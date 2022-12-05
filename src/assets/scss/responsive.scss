@@ -104,7 +104,8 @@ Responsive
         transform: unset !important;
         left: 0;
         height: 100%;
-        position: fixed;
+        width: 100%;
+        object-fit: cover;
       }
     }
     .v-card {

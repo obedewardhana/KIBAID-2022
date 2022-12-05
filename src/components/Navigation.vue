@@ -15,29 +15,57 @@
       </v-list>
 
       <v-divider />
-
-      <v-list dense>
-        <v-list-item v-for="([icon, text, link], i) in items" :key="i" link @click="$vuetify.goTo(link)">
-          <v-list-item-icon class="justify-center white--text">
-            <v-icon class="white--text">{{ icon }}</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title class="subtitile-1 white--text">{{
-                text
-            }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item href="mailto:admin@sinodekibaid.org">
-          <v-list-item-icon class="justify-center white--text">
-            <v-icon class="white--text">mdi-email-outline</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title class="subtitile-1 white--text">
+      <template v-if="this.$route.name == '' || this.$route.name == 'Home'">
+        <v-list dense>
+          <v-list-item v-for="([icon, text, link], i) in items" :key="i" link @click="$vuetify.goTo(link)">
+            <v-list-item-icon class="justify-center white--text"  style="margin-right:10px!important">
+              <v-icon class="white--text">{{ icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title class="subtitile-1 white--text">{{
+                  text
+              }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item href="mailto:admin@sinodekibaid.org">
+            <v-list-item-icon class="justify-center white--text"  style="margin-right:10px!important">
+              <v-icon class="white--text">mdi-email-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title class="subtitile-1 white--text">
                 Kontak
-            </v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </template>
+      <template v-else>
+        <v-list dense>
+          <v-list-item v-for="([icon, text, link], i) in links" :key="i" link>
+            <router-link class="nav-link white--text d-flex" :to="link">
+              <v-list-item-icon class="justify-center white--text" style="margin-right:10px!important">
+                <v-icon class="white--text">{{ icon }}</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title class="subtitile-1 white--text">{{
+                    text
+                }}</v-list-item-title>
+              </v-list-item-content>
+            </router-link>
+          </v-list-item>
+          <v-list-item href="mailto:admin@sinodekibaid.org">
+            <v-list-item-icon class="justify-center white--text" style="margin-right:10px!important">
+              <v-icon class="white--text">mdi-email-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title class="subtitile-1 white--text">
+                Kontak
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </template>
+
     </v-navigation-drawer>
 
 
@@ -46,8 +74,9 @@
         <v-row>
           <v-col cols="12">
             <div class="d-flex align-center">
-              <v-btn :ripple="false" width="140" large depressed link @click.stop="$router.push('/home').catch(() => { });"
-                color="transparent" elevation="0" class="no-hover" rounded>
+              <v-btn :ripple="false" width="140" large depressed link
+                @click.stop="$router.push('/home').catch(() => { });" color="transparent" elevation="0" class="no-hover"
+                rounded>
                 <v-toolbar-title class="d-flex align-center" style="width:150px">
                   <v-img src="@/assets/img/logo-kibaid.png" max-width="50px" width="100%" height="100%"
                     object-fit="contain" class="my-auto mr-3" />
@@ -55,24 +84,54 @@
                 </v-toolbar-title>
               </v-btn>
               <v-spacer />
-              <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="mr-4" v-if="isXs" />
-              <div v-else>
-                <v-btn text @click="$vuetify.goTo('#hero')">
-                  <span class="mr-2">Home</span>
-                </v-btn>
-                <v-btn text @click="$vuetify.goTo('#features')">
-                  <span class="mr-2">Tentang Kami</span>
-                </v-btn>
-                <v-btn text @click="$vuetify.goTo('#infographic')">
-                  <span class="mr-2">Gereja</span>
-                </v-btn>
-                <v-btn text @click="$vuetify.goTo('#feed')">
-                  <span class="mr-2">Kabar</span>
-                </v-btn>
-                <v-btn rounded outlined text href="mailto:admin@sinodekibaid.org">
-                  <span class="mr-2">Kontak</span>
-                </v-btn>
-              </div>
+              <template v-if="this.$route.name == '' || this.$route.name == 'Home'">
+                <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="mr-4" v-if="isXs" />
+                <div v-else>
+                  <v-btn text @click="$vuetify.goTo('#hero')">
+                    <span class="mr-2">Home</span>
+                  </v-btn>
+                  <v-btn text @click="$vuetify.goTo('#features')">
+                    <span class="mr-2">Tentang Kami</span>
+                  </v-btn>
+                  <v-btn text @click="$vuetify.goTo('#infographic')">
+                    <span class="mr-2">Gereja</span>
+                  </v-btn>
+                  <v-btn text @click="$vuetify.goTo('#feed')">
+                    <span class="mr-2">Kabar</span>
+                  </v-btn>
+                  <v-btn rounded outlined text href="mailto:admin@sinodekibaid.org">
+                    <span class="mr-2">Kontak</span>
+                  </v-btn>
+                </div>
+              </template>
+              <template v-else>
+                <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="mr-4" v-if="isXs" />
+                <div v-else>
+                  <v-btn text>
+                    <router-link class="nav-link white--text" to="/">
+                      <span class="mr-2">Home</span>
+                    </router-link>
+                  </v-btn>
+                  <v-btn text>
+                    <router-link class="nav-link white--text" to="/about">
+                      <span class="mr-2">Tentang Kami</span>
+                    </router-link>
+                  </v-btn>
+                  <v-btn text>
+                    <router-link class="nav-link white--text" to="/church">
+                      <span class="mr-2">Gereja</span>
+                    </router-link>
+                  </v-btn>
+                  <v-btn text>
+                    <router-link class="nav-link white--text" to="/news">
+                      <span class="mr-2">Kabar</span>
+                    </router-link>
+                  </v-btn>
+                  <v-btn rounded outlined text href="mailto:admin@sinodekibaid.org">
+                    <span class="mr-2">Kontak</span>
+                  </v-btn>
+                </div>
+              </template>
             </div>
           </v-col>
         </v-row>
@@ -104,6 +163,12 @@ export default {
       ["mdi-church-outline", "Gereja", "#infographic"],
       ["mdi-newspaper", "Kabar", "#feed"],
     ],
+    links: [
+      ["mdi-home-outline", "Home", "Home"],
+      ["mdi-information-outline", "Tentang Kami", "About"],
+      ["mdi-church-outline", "Gereja", "Church"],
+      ["mdi-newspaper", "Kabar", "News"],
+    ],
   }),
   props: {
     color: String,
@@ -113,6 +178,9 @@ export default {
     onResize() {
       this.isXs = window.innerWidth < 850;
     },
+    checkRoute() {
+      console.log(this.$route.name);
+    }
   },
 
   watch: {
@@ -126,6 +194,7 @@ export default {
     },
   },
   mounted() {
+    this.checkRoute();
     this.onResize();
     window.addEventListener("resize", this.onResize, { passive: true });
   },

@@ -13,7 +13,6 @@
         "deepai": "^1.0.17",
         "firebase": "^7.24.0",
         "scss": "^0.2.4",
-        "vue": "^2.6.12",
         "vue-slick-carousel": "^1.0.6",
         "vue-svg-map": "^1.2.0",
         "vuetify": "^2.4.2"

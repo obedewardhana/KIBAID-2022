@@ -32,7 +32,7 @@ export default Vue.extend({
 
   data: () => ({
     fab: null,
-    color: "",
+    color: "secondary",
     flat: null,
     isLoading: true
   }),
@@ -54,7 +54,7 @@ export default Vue.extend({
         this.color = "transparent";
         this.flat = true;
       }
-    },
+    }
   },
 
   methods: {
@@ -65,7 +65,7 @@ export default Vue.extend({
     },
     toTop() {
       this.$vuetify.goTo(0);
-    },
+    }
   },
 
   mounted() {
