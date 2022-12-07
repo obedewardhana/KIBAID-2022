@@ -213,9 +213,45 @@ export default {
                     link: 'church'
                 },
                 {
-                    title: 'Klasis Makassar Timur',
+                    title: 'Gereja KIBAID Jemaat Dirgantara',
                     province: 'Sulawesi Selatan',
-                    category: 'Klasis',
+                    category: 'Klasis Makassar Timur',
+                    link: 'church'
+                },
+                {
+                    title: 'Gereja KIBAID Jemaat Batubara Daya',
+                    province: 'Sulawesi Selatan',
+                    category: 'Klasis Makassar Timur',
+                    link: 'church'
+                },
+                {
+                    title: 'Gereja KIBAID Jemaat Sudiang',
+                    province: 'Sulawesi Selatan',
+                    category: 'Klasis Makassar Timur',
+                    link: 'church'
+                },
+                {
+                    title: 'Gereja KIBAID Jemaat Maros',
+                    province: 'Sulawesi Selatan',
+                    category: 'Klasis Makassar Timur',
+                    link: 'church'
+                },
+                {
+                    title: 'Gereja KIBAID Jemaat Pangkep',
+                    province: 'Sulawesi Selatan',
+                    category: 'Klasis Makassar Timur',
+                    link: 'church'
+                },
+                {
+                    title: 'Gereja KIBAID Jemaat Tamalanrea',
+                    province: 'Sulawesi Selatan',
+                    category: 'Klasis Makassar Timur',
+                    link: 'church'
+                },
+                {
+                    title: 'Gereja KIBAID Pos PI. Tanralili',
+                    province: 'Sulawesi Selatan',
+                    category: 'Klasis Makassar Timur',
                     link: 'church'
                 },
                 {

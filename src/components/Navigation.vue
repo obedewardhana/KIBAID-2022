@@ -8,8 +8,8 @@
             <img src="@/assets/img/logo-kibaid.png" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title text-uppercase white--text">Sinode</v-list-item-title>
-            <v-list-item-title class="title text-uppercase white--text">Kibaid</v-list-item-title>
+            <v-list-item-title class="title text-uppercase white--text hover-text">Sinode</v-list-item-title>
+            <v-list-item-title class="title text-uppercase white--text hover-text">Kibaid</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -18,21 +18,21 @@
       <template v-if="this.$route.name == '' || this.$route.name == 'Home'">
         <v-list dense>
           <v-list-item v-for="([icon, text, link], i) in items" :key="i" link @click="$vuetify.goTo(link)">
-            <v-list-item-icon class="justify-center white--text"  style="margin-right:10px!important">
-              <v-icon class="white--text">{{ icon }}</v-icon>
+            <v-list-item-icon class="justify-center white--text hover-text"  style="margin-right:10px!important">
+              <v-icon class="white--text hover-text">{{ icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title class="subtitile-1 white--text">{{
+              <v-list-item-title class="subtitile-1 white--text hover-text">{{
                   text
               }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <v-list-item href="mailto:admin@sinodekibaid.org">
-            <v-list-item-icon class="justify-center white--text"  style="margin-right:10px!important">
-              <v-icon class="white--text">mdi-email-outline</v-icon>
+            <v-list-item-icon class="justify-center white--text hover-text"  style="margin-right:10px!important">
+              <v-icon class="white--text hover-text">mdi-email-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title class="subtitile-1 white--text">
+              <v-list-item-title class="subtitile-1 white--text hover-text">
                 Kontak
               </v-list-item-title>
             </v-list-item-content>
@@ -42,23 +42,23 @@
       <template v-else>
         <v-list dense>
           <v-list-item v-for="([icon, text, link], i) in links" :key="i" link>
-            <router-link class="nav-link white--text d-flex" :to="link">
-              <v-list-item-icon class="justify-center white--text" style="margin-right:10px!important">
-                <v-icon class="white--text">{{ icon }}</v-icon>
+            <router-link class="nav-link white--text hover-text d-flex" :to="link">
+              <v-list-item-icon class="justify-center white--text hover-text" style="margin-right:10px!important">
+                <v-icon class="white--text hover-text">{{ icon }}</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title class="subtitile-1 white--text">{{
+                <v-list-item-title class="subtitile-1 white--text hover-text">{{
                     text
                 }}</v-list-item-title>
               </v-list-item-content>
             </router-link>
           </v-list-item>
           <v-list-item href="mailto:admin@sinodekibaid.org">
-            <v-list-item-icon class="justify-center white--text" style="margin-right:10px!important">
-              <v-icon class="white--text">mdi-email-outline</v-icon>
+            <v-list-item-icon class="justify-center white--text hover-text" style="margin-right:10px!important">
+              <v-icon class="white--text hover-text">mdi-email-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title class="subtitile-1 white--text">
+              <v-list-item-title class="subtitile-1 white--text hover-text">
                 Kontak
               </v-list-item-title>
             </v-list-item-content>
@@ -87,47 +87,47 @@
               <template v-if="this.$route.name == '' || this.$route.name == 'Home'">
                 <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="mr-4" v-if="isXs" />
                 <div v-else>
-                  <v-btn text @click="$vuetify.goTo('#hero')">
-                    <span class="mr-2">Home</span>
+                  <v-btn class="no-hover" text @click="$vuetify.goTo('#hero')">
+                    <span class="mr-2 hover-text">Home</span>
                   </v-btn>
-                  <v-btn text @click="$vuetify.goTo('#features')">
-                    <span class="mr-2">Tentang Kami</span>
+                  <v-btn class="no-hover" text @click="$vuetify.goTo('#features')">
+                    <span class="mr-2 hover-text">Tentang Kami</span>
                   </v-btn>
-                  <v-btn text @click="$vuetify.goTo('#infographic')">
-                    <span class="mr-2">Gereja</span>
+                  <v-btn class="no-hover" text @click="$vuetify.goTo('#infographic')">
+                    <span class="mr-2 hover-text">Gereja</span>
                   </v-btn>
-                  <v-btn text @click="$vuetify.goTo('#feed')">
-                    <span class="mr-2">Kabar</span>
+                  <v-btn class="no-hover" text @click="$vuetify.goTo('#feed')">
+                    <span class="mr-2 hover-text">Kabar</span>
                   </v-btn>
-                  <v-btn rounded outlined text href="mailto:admin@sinodekibaid.org">
-                    <span class="mr-2">Kontak</span>
+                  <v-btn class="no-hover" rounded outlined text href="mailto:admin@sinodekibaid.org">
+                    <span class="mr-2 hover-text">Kontak</span>
                   </v-btn>
                 </div>
               </template>
               <template v-else>
                 <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="mr-4" v-if="isXs" />
                 <div v-else>
-                  <v-btn text>
-                    <router-link class="nav-link white--text" to="/">
+                  <v-btn class="no-hover" text>
+                    <router-link class="nav-link white--text hover-text" to="/">
                       <span class="mr-2">Home</span>
                     </router-link>
                   </v-btn>
-                  <v-btn text>
-                    <router-link class="nav-link white--text" to="/about">
+                  <v-btn class="no-hover" text>
+                    <router-link class="nav-link white--text hover-text" to="/about">
                       <span class="mr-2">Tentang Kami</span>
                     </router-link>
                   </v-btn>
-                  <v-btn text>
-                    <router-link class="nav-link white--text" to="/church">
+                  <v-btn class="no-hover" text>
+                    <router-link class="nav-link white--text hover-text" to="/church">
                       <span class="mr-2">Gereja</span>
                     </router-link>
                   </v-btn>
-                  <v-btn text>
-                    <router-link class="nav-link white--text" to="/news">
+                  <v-btn class="no-hover" text>
+                    <router-link class="nav-link white--text hover-text" to="/news">
                       <span class="mr-2">Kabar</span>
                     </router-link>
                   </v-btn>
-                  <v-btn rounded outlined text href="mailto:admin@sinodekibaid.org">
+                  <v-btn class="no-hover" rounded outlined text href="mailto:admin@sinodekibaid.org">
                     <span class="mr-2">Kontak</span>
                   </v-btn>
                 </div>

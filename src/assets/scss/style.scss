@@ -60,6 +60,9 @@
   .nav-link {
     letter-spacing: 0;
     text-decoration: none;
+    transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
   }
   .v-list {
     .v-list-item {
@@ -69,6 +72,31 @@
       }
       .v-list-item__subtitle {
         font-family: "Poppins", sans-serif;
+      }
+    }
+  }
+  .hover-text:hover {
+    color: var(--v-bluelighter-base) !important;
+    transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+  }
+  .v-breadcrumbs {
+    background: var(--v-gray-base);
+    border-radius: 12px;
+    margin-top: 20px;
+    padding: 15px 20px;
+    li {
+      a {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      &:not(:last-child):after {
+        content: ">";
+        display: block;
+        position: relative;
+        padding-left: 10px;
       }
     }
   }
@@ -207,6 +235,37 @@
         color: var(--v-white-base);
       }
     }
+    .feed-control.single {
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      height: 190px;
+      .btn-control {
+        z-index: 3;
+        width: 25px !important;
+        min-width: unset !important;
+        height: 60px !important;
+        border-radius: 0;
+        box-shadow: unset;
+        display: flex;
+        align-items: center;
+        background: var(--v-secondary-base);
+        color: var(--v-white-base);
+        .v-icon {
+          font-size: 16px !important;
+        }
+      }
+      .btn-feed-prev {
+        top: 50%;
+        left: 0;
+      }
+      .btn-feed-next {
+        top: 50%;
+        right: 0;
+      }
+    }
     .feed-item {
       display: block !important;
       position: relative;
@@ -225,6 +284,10 @@
           padding: 20px;
           width: 100%;
           height: 100%;
+          .feed-item-header {
+            position: relative;
+            z-index: 2;
+          }
           .feed-img {
             display: block;
             position: absolute;
@@ -264,6 +327,25 @@
             border-radius: 6px;
             font-size: 12px;
           }
+        }
+        .feed-content:before {
+          content: " ";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 200px;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          background: rgb(4, 47, 77);
+          background: linear-gradient(
+            180deg,
+            rgba(4, 47, 77, 0.8379726890756303) 18%,
+            rgba(4, 47, 77, 0.7259278711484594) 37%,
+            rgba(4, 47, 77, 0.5830707282913166) 49%,
+            rgba(4, 47, 77, 0.38139005602240894) 62%,
+            rgba(4, 47, 77, 0) 100%
+          );
         }
       }
     }

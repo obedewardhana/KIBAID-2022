@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col cols="12">
-                <v-breadcrumbs divider="-">
+                <v-breadcrumbs  divider=">" >
                     <v-breadcrumbs-item v-for="(route, idx) in list" :key="idx || route.link || route.label"
                         :to="route.link">
                         {{ route.label }}

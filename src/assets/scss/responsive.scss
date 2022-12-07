@@ -11,6 +11,9 @@ Responsive
       p {
         font-size: 14px;
       }
+      .feed-control.single {
+        height:140px;
+      }
       .bg-infographic {
         &:nth-child(2) {
           background: transparent;
@@ -115,14 +118,6 @@ Responsive
         }
         p {
           width: 80%;
-        }
-      }
-      .feed-control {
-        .v-btn {
-          min-width: unset !important;
-          .v-icon {
-            font-size: 16px !important;
-          }
         }
       }
       .feed-date {
