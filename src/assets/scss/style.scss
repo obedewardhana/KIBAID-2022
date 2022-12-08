@@ -15,6 +15,7 @@
   .text-h4,
   .text-h5,
   .text-h6,
+  .text-p,
   .title,
   strong,
   h1,
@@ -27,10 +28,11 @@
     font-family: "Poppins", sans-serif !important;
     letter-spacing: normal;
     word-break: break-word;
-    line-height: 1.6;
+    line-height: 1.6 !important;
     letter-spacing: 0;
   }
-  p {
+  p,
+  .text-p {
     font-size: 18px;
     font-weight: 500;
   }
@@ -39,6 +41,7 @@
   }
   .v-btn {
     font-family: "Poppins", sans-serif !important;
+    letter-spacing: 0;
   }
   .container {
     max-width: 1024px;
@@ -260,10 +263,12 @@
       .btn-feed-prev {
         top: 50%;
         left: 0;
+        text-align: center;
       }
       .btn-feed-next {
         top: 50%;
         right: 0;
+        text-align: center;
       }
     }
     .feed-item {
@@ -373,6 +378,75 @@
           -webkit-transition: 0.5s ease-in-out;
           background-color: var(--v-primary-base);
           height: calc(100% / 2) !important;
+        }
+      }
+    }
+    .feed-horizontal-item {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .v-image {
+        width: 30%;
+      }
+      .feed-horizontal-content {
+        width: 70%;
+        background-color: var(--v-gray-base);
+        position: relative;
+        .v-card__title {
+          width: 80%;
+        }
+        .feed-category {
+          width: auto;
+          height: auto;
+          font-family: "Poppins", sans-serif;
+          background-color: transparent;
+          border: 1px solid var(--v-primary-base);
+          color: var(--v-primary-base);
+          margin: 16px;
+          padding: 2px 8px;
+          display: flex;
+          position: relative;
+          text-transform: capitalize;
+          border-radius: 6px;
+          font-size: 12px;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+    .feed-horizontal-item.stacked {
+      cursor: pointer;
+      .feed-horizontal-content {
+        background-color: transparent;
+        width: 100%;
+        .v-card__title {
+          width: 100%;
+        }
+        .v-btn {
+          padding: 20px;
+          border-bottom: 1px solid var(--v-primary-base);
+          border-left: 1px solid var(--v-primary-base);
+          border-radius: unset;
+          flex: unset;
+          display: flex;
+          height: auto;
+          white-space: normal;
+          transition: 0.2s ease-in-out;
+          -moz-transition: 0.2s ease-in-out;
+          -webkit-transition: 0.2s ease-in-out;
+          margin: 0;
+          .v-btn__content {
+            flex: unset;
+            text-align: left;
+          }
+          &:hover {
+            border-bottom: 1px solid var(--v-bluelighter-base);
+            border-left: 1px solid var(--v-bluelighter-base);
+            transition: 0.2s ease-in-out;
+            -moz-transition: 0.2s ease-in-out;
+            -webkit-transition: 0.2s ease-in-out;
+          }
         }
       }
     }
@@ -498,6 +572,9 @@
         }
       }
     }
+    .v-date-picker-header__value button {
+      font-family: "Poppins", sans-serif;
+    }
   }
   .no-hover {
     &:hover {
@@ -533,6 +610,16 @@
     }
     &.bg--gray {
       background-color: var(--v-gray-base);
+    }
+    .sticky {
+      position: sticky;
+      top: 0;
+    }    
+    .news-sidebar {
+      .news-sidebar_inner {
+        background-color: var(--v-white-base);
+        text-align:center;
+      }
     }
   }
 }

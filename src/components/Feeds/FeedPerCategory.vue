@@ -3,7 +3,7 @@
         <v-container>
             <v-row>
                 <v-col cols="12">
-                    <v-card :elevation="0" color="transparent" class="py-8" tile>
+                    <v-card :elevation="0" color="transparent" class="pt-8" tile>
                         <v-row>
                             <v-col cols="12" class="">
                                 <div class="feed-control single">
@@ -22,7 +22,7 @@
                                     <v-overlay :value="overlay" absolute>
                                         <v-progress-circular indeterminate size="64"></v-progress-circular>
                                     </v-overlay>
-                                    <VueSlickCarousel v-bind="settings" ref="carousel" class="px-3">
+                                    <VueSlickCarousel v-bind="settings" ref="carousel">
                                         <div class="feed-item overflow-hidden" v-for="(feed, idx) in feeds"
                                             :key="(idx || feed.link || feed.title)">
                                             <v-overlay value="true" color="primary" absolute>
@@ -30,7 +30,7 @@
                                                     <v-img :src="feed.src" :lazy-src="feed.src" aspect-ratio="1"
                                                         class="feed-img fill-height"></v-img>
                                                     <div class="feed-item-header text-left">
-                                                        <h2 class="text-capitalize">{{ feed.title }}</h2>
+                                                        <h3 class="text-capitalize mb-2">{{ feed.title }}</h3>
                                                         <p class="text-small gray--text">
                                                             <v-icon size="12" class="mr-1">mdi-calendar</v-icon>
                                                             {{ feed.date }}

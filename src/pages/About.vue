@@ -3,7 +3,7 @@
     <BannerComp title="Tentang Kami" />
     <BreadcrumbComp :list="menu" />
     <HistoryComp />    
-    <FeedPerCategoryComp :feeds="news" />
+    <FeedPerCategoryComp :feeds="news" class="pb-8"/>
     <InfographicSectionComp />
     <AuthorityComp />
     <FaithSectionComp class="pt-8" />

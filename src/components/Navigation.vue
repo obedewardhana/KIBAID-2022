@@ -80,7 +80,7 @@
                 <v-toolbar-title class="d-flex align-center" style="width:150px">
                   <v-img src="@/assets/img/logo-kibaid.png" max-width="50px" width="100%" height="100%"
                     object-fit="contain" class="my-auto mr-3" />
-                  <h1 class="title text-uppercase" style="line-height:1.2">Sinode <br>Kibaid</h1>
+                  <h1 class="title text-uppercase" style="line-height:1.2!important">Sinode <br>Kibaid</h1>
                 </v-toolbar-title>
               </v-btn>
               <v-spacer />

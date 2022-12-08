@@ -22,7 +22,7 @@
                             </v-col>
                         </v-row>
                         <v-row class="mt-0">
-                            <v-col cols="4" class="pt-0">
+                            <v-col cols="2" sm="4" md="4" xl="4" class="pt-0">
                                 <div class="feed-filter">
                                     <v-btn :ripple="false" v-for="category in categories" :key="category.title"
                                         :class="category.class + `${category.title === filter ? ' active ' : ''}`"
@@ -32,7 +32,7 @@
                                     </v-btn>
                                 </div>
                             </v-col>
-                            <v-col cols="8" class="pt-0">
+                            <v-col cols="10" sm="8" md="8" xl="8" class="pt-0">
                                 <div class="loading-box">
                                     <v-overlay :value="overlay" absolute>
                                         <v-progress-circular indeterminate size="64"></v-progress-circular>

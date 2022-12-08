@@ -12,7 +12,7 @@ Responsive
         font-size: 14px;
       }
       .feed-control.single {
-        height:140px;
+        height: 180px;
       }
       .bg-infographic {
         &:nth-child(2) {
@@ -56,15 +56,15 @@ Responsive
         }
       }
       .feed-item {
-        height: 200px;
+        height: 300px;
         .v-overlay__content {
           .feed-content {
             h2 {
               font-size: 20px;
             }
             .feed-category {
-              font-size: 8px;
-              padding: 3px 8px;
+              font-size: 12px;
+              padding: 2px 8px;
               bottom: 12px;
             }
             .v-btn {
@@ -83,6 +83,16 @@ Responsive
           }
         }
       }
+      .feed-horizontal-item {
+        flex-direction: column;
+        flex-wrap: wrap;
+        .v-image {
+          width: 100%;
+        }
+        .feed-horizontal-content {
+          width: 100%;
+        }
+      }
     }
   }
   .v-dialog {
@@ -91,6 +101,16 @@ Responsive
       min-height: unset;
       .v-list-item__content {
         width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .v-application {
+    .v-card {
+      .feed-filter .v-btn__content {
+        transform: rotate(-90deg);
       }
     }
   }
@@ -133,11 +153,19 @@ Responsive
           }
         }
       }
+      .feed-control {
+        .v-btn {
+          min-width: unset !important;
+          .v-icon {
+            font-size: 14px !important;
+          }
+        }
+      }
       .feed-item {
         .v-overlay__content {
           .feed-content {
             h2 {
-              font-size: 16px;
+              // font-size: 16px;
             }
           }
         }
