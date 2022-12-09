@@ -37,7 +37,7 @@
                                                         </p>
                                                     </div>
                                                     <span class="feed-category">{{ feed.category }}</span>
-                                                    <v-btn :ripple="false" :href="feed.link" target="_blank" text
+                                                    <v-btn :ripple="false" :href="feed.link" text
                                                         color="white" class="text-capitalize btn-default no-hover" dark>
                                                         Read more >
                                                     </v-btn>
@@ -80,7 +80,7 @@ export default {
             "slidesPerRow": 1,
             "slidesToScroll": 3,
             "initialSlide": 0,
-            "autoplay": false,
+            "autoplay": true,
             "responsive": [
                 {
                     "breakpoint": 1024,
@@ -93,8 +93,8 @@ export default {
                 {
                     "breakpoint": 768,
                     "settings": {
-                        "slidesToShow": 3,
-                        "slidesToScroll": 3,
+                        "slidesToShow": 2,
+                        "slidesToScroll": 2,
                         "initialSlide": 0,
                         "infinite": true
                     }

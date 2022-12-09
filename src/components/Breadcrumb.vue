@@ -5,7 +5,7 @@
                 <v-col cols="12">
                     <v-breadcrumbs divider=">">
                         <v-breadcrumbs-item v-for="(route, idx) in list" :key="idx || route.link || route.label"
-                            :to="route.link">
+                            :to="route.link" class="hover-text mb-2 mb-md-0 mb-lg-0">
                             {{ route.label }}
                         </v-breadcrumbs-item>
                     </v-breadcrumbs>

@@ -10,6 +10,7 @@ Responsive
     .v-card {
       p {
         font-size: 14px;
+        white-space:normal;
       }
       .feed-control.single {
         height: 180px;
@@ -62,10 +63,14 @@ Responsive
             h2 {
               font-size: 20px;
             }
+            .feed-item-header {
+              margin-top: 30px;
+            }
             .feed-category {
               font-size: 12px;
               padding: 2px 8px;
-              bottom: 12px;
+              bottom: unset;
+              top: 20px;
             }
             .v-btn {
               font-size: 12px;
@@ -91,6 +96,23 @@ Responsive
         }
         .feed-horizontal-content {
           width: 100%;
+          .feed-category {
+            color: var(--v-white-base);
+            background-color: var(--v-primary-base);
+          }
+          .v-card__title {
+            width: 100%;
+          }
+        }
+      }
+    }
+    section {
+      .news-main {
+        min-height: unset;
+        .feed-detail {
+          .feed-detail-date {
+            flex-direction: column;
+          }
         }
       }
     }
@@ -158,15 +180,6 @@ Responsive
           min-width: unset !important;
           .v-icon {
             font-size: 14px !important;
-          }
-        }
-      }
-      .feed-item {
-        .v-overlay__content {
-          .feed-content {
-            h2 {
-              // font-size: 16px;
-            }
           }
         }
       }

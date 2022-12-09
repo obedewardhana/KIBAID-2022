@@ -28,12 +28,12 @@
     font-family: "Poppins", sans-serif !important;
     letter-spacing: normal;
     word-break: break-word;
-    line-height: 1.6 !important;
+    line-height: 1.5 !important;
     letter-spacing: 0;
   }
   p,
   .text-p {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
   }
   .text-small {
@@ -92,7 +92,7 @@
     li {
       a {
         font-family: "Poppins", sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
       }
       &:not(:last-child):after {
@@ -120,6 +120,7 @@
       }
       p {
         width: 90%;
+        font-size: 18px;
         margin: 0;
         z-index: 2;
         position: relative;
@@ -312,6 +313,8 @@
             font-size: 16px;
             transform: translateX(0);
             justify-content: flex-end;
+            margin-left:auto;
+            margin-right:0;
             &:hover {
               transform: translateX(15px);
               transition: 0.5s ease-in-out;
@@ -331,6 +334,7 @@
             text-transform: capitalize;
             border-radius: 6px;
             font-size: 12px;
+            z-index: 4;
           }
         }
         .feed-content:before {
@@ -391,7 +395,6 @@
       .feed-horizontal-content {
         width: 70%;
         background-color: var(--v-gray-base);
-        position: relative;
         .v-card__title {
           width: 80%;
         }
@@ -575,7 +578,67 @@
     .v-date-picker-header__value button {
       font-family: "Poppins", sans-serif;
     }
+    .bg--bluelighter {
+      background-color: var(--v-bluelighter-base);
+    }
+    .bg--secondary {
+      background-color: var(--v-secondary-base);
+    }
+    .bg--gray {
+      background-color: var(--v-gray-base);
+    }
+    .bg--accent {
+      background-color: var(--v-accent-base);
+    }
+    .bg--white {
+      background-color: var(--v-white-base);
+    }
+    form {
+      .v-input__slot {
+        background: var(--v-white-base);
+      }
+      input,
+      textarea {
+        font-family: "Poppins", sans-serif;
+        padding: 0 5px;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        font-family: "Poppins", sans-serif;
+        padding: 0 5px;
+        text-transform: capitalize;
+      }
+      .v-text-field__details {
+        display: none;
+      }
+      .error-message {
+        color: red;
+        font-family:'Poppins',sans-serif;
+      }
+    }
+    
+    .comment-box {
+      display: block;
+      position: relative;
+      min-height:unset!important;
+      &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 15px 20px 0;
+        border-color: transparent #ffffff transparent transparent;
+        position: absolute;
+        top: 0;
+        left: -9px;
+        z-index:4;
+      }
+      &:hover:before{
+        opacity:1;
+      }
+    }
   }
+
   .no-hover {
     &:hover {
       &:before {
@@ -611,14 +674,48 @@
     &.bg--gray {
       background-color: var(--v-gray-base);
     }
+    &.bg--accent {
+      background-color: var(--v-accent-base);
+    }
     .sticky {
       position: sticky;
       top: 0;
-    }    
+    }
+    .news-main {
+      min-height: 1500px;
+
+      .feed-detail {
+        .feed-detail-category {
+          font-size: 13px;
+          font-family: "Poppins", sans-serif;
+          color: var(--v-primary-base);
+          text-transform: capitalize;
+          border: 1px solid var(--v-primary-base);
+          border-radius: 5px;
+          padding: 4px 8px;
+          line-height: 1;
+        }
+        .feed-detail-date {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          font-size: 14px;
+          font-family: "Poppins", sans-serif;
+          color: var(--v-primary-base);
+          flex-wrap: wrap;
+          flex-direction: row;
+        }
+      }
+    }
     .news-sidebar {
       .news-sidebar_inner {
         background-color: var(--v-white-base);
-        text-align:center;
+        text-align: center;
+      }
+      &.is-affixed {
+        .news-sidebar_inner {
+          margin-left: 0px;
+        }
       }
     }
   }

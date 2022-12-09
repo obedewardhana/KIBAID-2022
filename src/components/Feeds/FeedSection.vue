@@ -52,7 +52,7 @@
                                                             </p>
                                                         </div>
                                                         <span class="feed-category">{{ feed.category }}</span>
-                                                        <v-btn :ripple="false" :href="feed.link" target="_blank" text
+                                                        <v-btn :ripple="false" :href="feed.link"  text
                                                             color="white" class="text-capitalize btn-default no-hover"
                                                             dark>
                                                             Read more >
@@ -76,7 +76,7 @@
                                                             </p>
                                                         </div>
                                                         <span class="feed-category">{{ renungan.category }}</span>
-                                                        <v-btn :ripple="false" :href="renungan.link" target="_blank"
+                                                        <v-btn :ripple="false" :href="renungan.link" 
                                                             text color="white"
                                                             class="text-capitalize btn-default no-hover" dark>
                                                             Read more >
@@ -101,7 +101,7 @@
                                                         </div>
                                                         <span class="feed-category">{{ organisasi.category
                                                         }}</span>
-                                                        <v-btn :ripple="false" :href="organisasi.link" target="_blank"
+                                                        <v-btn :ripple="false" :href="organisasi.link"
                                                             text color="white"
                                                             class="text-capitalize btn-default no-hover" dark>
                                                             Read more >
@@ -125,7 +125,7 @@
                                                             </p>
                                                         </div>
                                                         <span class="feed-category">{{ download.category }}</span>
-                                                        <v-btn :ripple="false" :href="download.link" target="_blank"
+                                                        <v-btn :ripple="false" :href="download.link"
                                                             text color="white"
                                                             class="text-capitalize btn-default no-hover" dark>
                                                             Read more >
@@ -202,56 +202,56 @@ export default {
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
-                link: '',
+                link: 'news/detail',
                 category: 'kabar',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
-                link: '',
+                link: 'news/detail',
                 category: 'kabar',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
-                link: '',
+                link: 'news/detail',
                 category: 'kabar',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
-                link: '',
+                link: 'news/detail',
                 category: 'kabar',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
-                link: '',
+                link: 'news/detail',
                 category: 'kabar',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
-                link: '',
+                link: 'news/detail',
                 category: 'kabar',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
-                link: '',
+                link: 'news/detail',
                 category: 'kabar',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
-                link: '',
+                link: 'news/detail',
                 category: 'kabar',
                 date: '22 Agustus 2022'
             },
@@ -260,56 +260,56 @@ export default {
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
-                link: '',
+                link: 'news/detail',
                 category: 'renungan',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
-                link: '',
+                link: 'news/detail',
                 category: 'renungan',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
-                link: '',
+                link: 'news/detail',
                 category: 'renungan',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
-                link: '',
+                link: 'news/detail',
                 category: 'renungan',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
-                link: '',
+                link: 'news/detail',
                 category: 'renungan',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
-                link: '',
+                link: 'news/detail',
                 category: 'renungan',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
-                link: '',
+                link: 'news/detail',
                 category: 'renungan',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
-                link: '',
+                link: 'news/detail',
                 category: 'renungan',
                 date: '22 Agustus 2022'
             },
@@ -318,56 +318,56 @@ export default {
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
-                link: '',
+                link: 'news/detail',
                 category: 'organisasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
-                link: '',
+                link: 'news/detail',
                 category: 'organisasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
-                link: '',
+                link: 'news/detail',
                 category: 'organisasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
-                link: '',
+                link: 'news/detail',
                 category: 'organisasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
-                link: '',
+                link: 'news/detail',
                 category: 'organisasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
-                link: '',
+                link: 'news/detail',
                 category: 'organisasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
-                link: '',
+                link: 'news/detail',
                 category: 'organisasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
-                link: '',
+                link: 'news/detail',
                 category: 'organisasi',
                 date: '22 Agustus 2022'
             },
@@ -376,56 +376,56 @@ export default {
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
-                link: '',
+                link: 'news/detail',
                 category: 'download',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
-                link: '',
+                link: 'news/detail',
                 category: 'download',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
-                link: '',
+                link: 'news/detail',
                 category: 'download',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
-                link: '',
+                link: 'news/detail',
                 category: 'download',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
-                link: '',
+                link: 'news/detail',
                 category: 'download',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
-                link: '',
+                link: 'news/detail',
                 category: 'download',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
-                link: '',
+                link: 'news/detail',
                 category: 'download',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
-                link: '',
+                link: 'news/detail',
                 category: 'download',
                 date: '22 Agustus 2022'
             },

@@ -5,8 +5,8 @@
     <FeedPerCategoryComp :feeds="news" class="pb-8" />
     <section class="pb-10">
       <v-container>
-        <v-row class="your-container-class" data-v-sticky-container>
-          <div class="col-12 col-sm-6 col-md-8 col-xl-8">
+        <v-row class="news-container" data-v-sticky-container>
+          <div class="col-12 col-sm-6 col-md-8 col-xl-8 news-main">
             <FeedHorizontalComp :feedspc="news" />
           </div>
           <template v-if="(windowWidth > 767)">
@@ -60,7 +60,7 @@ export default {
       {
         src: require('@/assets/img/img-pray1.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 1',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -68,7 +68,7 @@ export default {
       {
         src: require('@/assets/img/img-worship1.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 2',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -76,7 +76,7 @@ export default {
       {
         src: require('@/assets/img/img-worship2.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 3',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -84,7 +84,7 @@ export default {
       {
         src: require('@/assets/img/img-pray1.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 4',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -92,7 +92,7 @@ export default {
       {
         src: require('@/assets/img/img-pray1.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 1',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -100,7 +100,7 @@ export default {
       {
         src: require('@/assets/img/img-worship1.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 2',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -108,7 +108,7 @@ export default {
       {
         src: require('@/assets/img/img-worship2.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 3',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -116,7 +116,7 @@ export default {
       {
         src: require('@/assets/img/img-pray1.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 4',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -126,7 +126,7 @@ export default {
       {
         src: require('@/assets/img/img-pray1.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -134,7 +134,7 @@ export default {
       {
         src: require('@/assets/img/img-worship1.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
@@ -142,24 +142,24 @@ export default {
       {
         src: require('@/assets/img/img-worship2.jpg'),
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
-        link: '',
+        link: 'news/detail',
         description: 'This is the short description for the card purpose.',
         category: 'kabar',
         date: '22 Agustus 2022'
       }
     ],
     options: {
-      topSpacing: 90
+      topSpacing: 90,
+      bottomSpacing: -90,
+      stickyClass: "is-affixed",
+      resizeSensor: true,
+
     },
     windowWidth: window.innerWidth
   }),
   mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize);
-    });
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.onResize);
+    window.addEventListener('resize', this.onResize);
+
   },
   methods: {
     onResize() {

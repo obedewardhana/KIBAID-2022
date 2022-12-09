@@ -5,7 +5,7 @@
                 <span class="text-p font-weight-light text-center">Pengikut Kami</span>
             </v-card-title>
 
-            <v-card-text class="text-p d-flex align-center justify-center pb-0">
+            <v-card-text class="text-p d-flex align-center pl-4 pb-0">
                 <v-icon large left>
                     mdi-instagram
                 </v-icon>
@@ -15,7 +15,7 @@
                 <span class="text-small font-weight-thin">Followers</span>
             </v-card-text>
 
-            <v-card-text class="text-p d-flex align-center justify-center">
+            <v-card-text class="text-p d-flex align-center pl-4 pt-2 pb-0">
                 <v-icon large left>
                     mdi-facebook
                 </v-icon>
@@ -23,6 +23,16 @@
                     class="purecounter large white--text text-h5 font-weight-bold mr-2">
                 </span>
                 <span class="text-small font-weight-thin">Followers</span>
+            </v-card-text>
+
+            <v-card-text class="text-p d-flex align-center pl-4 pt-2 pb-8">
+                <v-icon large left>
+                    mdi-web
+                </v-icon>
+                <span data-purecounter-start="0" data-purecounter-end="500"
+                    class="purecounter large white--text text-h5 font-weight-bold mr-2">
+                </span>
+                <span class="text-small font-weight-thin">Visitors</span>
             </v-card-text>
 
         </v-card>

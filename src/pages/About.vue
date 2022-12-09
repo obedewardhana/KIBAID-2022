@@ -44,56 +44,56 @@ export default {
       {
         src: require('@/assets/img/logo-kibaid.png'),
         title: 'Logo KIBAID',
-        link: '',
+        link: 'news/detail',
         category: 'Tentang Kami',
         date: '22 Agustus 2022'
       },
       {
         src: require('@/assets/img/img-worship1.jpg'),
         title: 'Sejarah KIBAID',
-        link: '',
+        link: 'news/detail',
         category: 'Tentang Kami',
         date: '22 Agustus 2022'
       },
       {
         src: require('@/assets/img/img-worship2.jpg'),
         title: 'judul 3',
-        link: '',
+        link: 'news/detail',
         category: 'Tentang Kami',
         date: '22 Agustus 2022'
       },
       {
         src: require('@/assets/img/img-pray1.jpg'),
         title: 'judul 4',
-        link: '',
+        link: 'news/detail',
         category: 'Tentang Kami',
         date: '22 Agustus 2022'
       },
       {
         src: require('@/assets/img/img-pray1.jpg'),
         title: 'judul 1',
-        link: '',
+        link: 'news/detail',
         category: 'Tentang Kami',
         date: '22 Agustus 2022'
       },
       {
         src: require('@/assets/img/img-worship1.jpg'),
         title: 'judul 2',
-        link: '',
+        link: 'news/detail',
         category: 'Tentang Kami',
         date: '22 Agustus 2022'
       },
       {
         src: require('@/assets/img/img-worship2.jpg'),
         title: 'judul 3',
-        link: '',
+        link: 'news/detail',
         category: 'Tentang Kami',
         date: '22 Agustus 2022'
       },
       {
         src: require('@/assets/img/img-pray1.jpg'),
         title: 'judul 4',
-        link: '',
+        link: 'news/detail',
         category: 'Tentang Kami',
         date: '22 Agustus 2022'
       },

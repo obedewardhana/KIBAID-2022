@@ -5,12 +5,12 @@
                 <v-col cols="12">
                     <v-card :elevation="0" color="transparent" class="pt-8 px-3" tile>
                         <v-row>
-                            <v-col cols="12">
+                            <v-col cols="12" class="px-0">
                                 <v-card-title
                                     class="text-h5 font-weight-bold primary--text text-uppercase justify-center text-center mb-5">
                                     SEJARAH KIBAID
                                 </v-card-title>
-                                <v-card-text>
+                                <v-card-text class="px-0">
                                     <v-tabs v-model="tab" background-color="secondary" dark>
                                         <v-tab v-for="item in items" :key="item.tab">
                                             <p class="text-small text-uppercase white--text mb-0">{{ item.date }}</p>
@@ -21,7 +21,7 @@
                                         <v-tab-item v-for="item in items" :key="item.tab">
                                             <v-card color="gray" flat class="py-5 px-5">
                                                 <v-card-text>
-                                                    <p class="text-p primary--text">{{ item.content }}</p>
+                                                    <p class="text-p primary--text text-justify">{{ item.content }}</p>
                                                 </v-card-text>
                                             </v-card>
                                         </v-tab-item>

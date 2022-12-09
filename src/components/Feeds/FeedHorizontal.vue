@@ -20,7 +20,7 @@
                             <p class="text-small text-capitalize bluesea--text pb-0">{{ feed.description }}</p>
                         </v-card-text>
                         <v-card-actions class="pt-0">
-                            <v-btn :ripple="false" :href="feed.link" target="_blank" text color="primary"
+                            <v-btn :ripple="false" :href="feed.link" text color="primary"
                                 class="text-capitalize text-small no-hover hover-text" dark>
                                 Read more >
                             </v-btn>

@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/Home.vue";
 import ChurchPage from "../pages/Church.vue";
 import NewsPage from "../pages/News.vue";
+import NewsDetailPage from "../pages/NewsDetail.vue";
 import AboutPage from "../pages/About.vue";
 
 Vue.use(Router);
@@ -39,7 +39,15 @@ const routes = [
     component: NewsPage,
     meta: {
       requiresAuth: false
-    }
+    },
+  },
+  {
+    path: '/news/detail',
+    name: "News Detail",
+    component: NewsDetailPage,
+    meta: {
+      requiresAuth: false
+    },
   },
   {
     path: "/about",

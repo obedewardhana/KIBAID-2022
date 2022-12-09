@@ -19,6 +19,11 @@ export default new Vuetify({
                 graylight: "#ecf1ee",
                 grayrefuge:"#617D82",
                 white: "#ffffff",
+                socialfacebook:"#3b5998",
+                socialinstagram:"#833AB4",
+                socialgmail:"#c71610",
+                socialtwitter:"#00acee",
+                socialpinterest:"#E60023"
             }
         }
     }
