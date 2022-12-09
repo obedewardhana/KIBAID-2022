@@ -6,12 +6,15 @@
     <section class="pb-10">
       <v-container>
         <v-row class="news-container" data-v-sticky-container>
-          <div class="col-12 col-sm-6 col-md-8 col-xl-8 news-main">
+          <div class="col-12 col-sm-6 col-md-8 col-xl-8 news-main" >
             <FeedHorizontalComp :feedspc="news" />
           </div>
-          <template v-if="(windowWidth > 767)">
-            <div class="col-12 col-sm-6 col-md-4 col-xl-4 news-sidebar" v-sticky="options">
-              <FeedStackedComp :feedst="stacked" class="news-sidebar_inner" data-v-sticky-inner />
+          <template v-if="(windowWidth > 700)">
+            <div class="col-12 col-sm-6 col-md-4 col-xl-4 news-sidebar" :class="{'bottom-reach': isAddClass}" v-sticky="options"
+            @affixed-container-bottom="handleBottom" @affix-top="handleTop">
+              <div class="news-sidebar_inner"  data-v-sticky-inner>
+                <FeedStackedComp :feedst="stacked" />
+              </div>
             </div>
           </template>
           <template v-else>
@@ -32,6 +35,8 @@ import FeedPerCategoryComp from "@/components/Feeds/FeedPerCategory.vue";
 import FeedStackedComp from "@/components/Feeds/FeedStacked.vue";
 import FeedHorizontalComp from "@/components/Feeds/FeedHorizontal.vue";
 import VueStickyDirective from '@renatodeleao/vue-sticky-directive';
+import ResizeSensor from "resize-sensor";
+window.ResizeSensor = ResizeSensor;
 
 export default {
   name: "NewsView",
@@ -155,6 +160,7 @@ export default {
       resizeSensor: true,
 
     },
+    isAddClass: false,
     windowWidth: window.innerWidth
   }),
   mounted() {
@@ -163,8 +169,17 @@ export default {
   },
   methods: {
     onResize() {
-      this.windowWidth = window.innerWidth
-    }
+      this.windowWidth = window.innerWidth;
+      console.log(this.windowWidth);
+    },
+    handleBottom(payload) {
+      console.log(payload);
+      this.isAddClass = true;
+    },
+    handleTop(payload) {
+      console.log(payload);
+      this.isAddClass = false;
+    },
   }
 };
 </script>
