@@ -1,5 +1,5 @@
 <template>
-  <section id="churchPage">
+  <div id="churchPage">
     <BannerComp title="Gereja" />
     <BreadcrumbComp :list="menu" />
     <v-container>
@@ -16,7 +16,7 @@
     <FeedPerCategoryComp :feeds="feedpc"/>
     <ChurchSectionComp />
     <DonationSectionComp />
-  </section>
+  </div>
 </template>
   
 <script>

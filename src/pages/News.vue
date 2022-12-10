@@ -1,5 +1,5 @@
 <template>
-  <section id="newsPage">
+  <div id="newsPage">
     <BannerComp title="Kabar" />
     <BreadcrumbComp :list="menu" />
     <FeedPerCategoryComp :feeds="news" class="pb-8" />
@@ -25,7 +25,7 @@
         </v-row>
       </v-container>
     </section>
-  </section>
+  </div>
 </template>
   
 <script>

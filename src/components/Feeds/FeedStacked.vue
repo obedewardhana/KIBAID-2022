@@ -11,7 +11,7 @@
                 <div class="feed-horizontal-item stacked" :ripple="false" :href="feed.link">
                     <div class="feed-horizontal-content">
                         <v-card-title class="py-0 px-0">
-                            <v-btn :ripple="false" :href="feed.link" target="_blank" text color="primary"
+                            <v-btn :ripple="false" :href="feed.link" text color="primary"
                                 class="text-capitalize no-hover hover-text" dark>
                                 <h4 class="">{{ feed.title }}</h4>
                             </v-btn>

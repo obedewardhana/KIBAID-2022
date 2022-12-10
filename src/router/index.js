@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import HomePage from "../pages/Home.vue";
 import ChurchPage from "../pages/Church.vue";
+import ChurchDetailPage from "../pages/ChurchDetail.vue";
 import NewsPage from "../pages/News.vue";
 import NewsDetailPage from "../pages/NewsDetail.vue";
 import AboutPage from "../pages/About.vue";
@@ -29,6 +30,14 @@ const routes = [
     path: "/church",
     name: "Church",
     component: ChurchPage,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/church/detail",
+    name: "Church Detail",
+    component: ChurchDetailPage,
     meta: {
       requiresAuth: false
     }

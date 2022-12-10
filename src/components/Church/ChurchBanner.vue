@@ -1,48 +1,41 @@
 <template>
-    <section id="hero">
-        <v-parallax src="@/assets/img/img-pray1.jpg" class="fill-height" height="750">
-            <v-overlay value="true" color="primary" absolute>
-                <v-row align="center" justify="center" class="text-center">
+    <section id="">
+        <video-background v-for="(ch, idx) in church" :key="idx" :src="ch.src"
+            style="max-height: 450px; height: 100vh;">
+            <v-overlay value="true" color="primary" absolute style="z-index:1;">
+                <v-row align="center" justify="center" class="text-center mt-4">
                     <v-col cols="12" md="12" xl="12">
                         <v-row align="center" justify="center">
                             <v-col cols="12" md="12" xl="12">
-                                <h1 class="text-h5 text-md-h3 text-xl-h3 text-capitalize font-weight-light text-center">
-                                    Selamat Datang di</h1>
-                                <h1 class="text-h5 text-md-h3 text-xl-h3 text-uppercase font-weight-bold text-center">
-                                    GEREJA KIBAID JEMAAT Jakarta
+                                <h1 class="text-h5 text-md-h3 text-xl-h3 font-weight-light text-center">Selamat Datang
+                                    di</h1>
+                                <h1 class="text-h5 text-md-h3 text-xl-h3 font-weight-bold text-center">
+                                    {{ ch.title }}
                                 </h1>
-                                <v-btn rounded outlined large dark @click="$vuetify.goTo('#features')"
-                                    class="mt-7 text-center">
-                                    Selanjutnya
-                                    <v-icon class="ml-2">mdi-arrow-down</v-icon>
-                                </v-btn>
                             </v-col>
                             <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down"> </v-col>
                         </v-row>
                     </v-col>
                 </v-row>
             </v-overlay>
-        </v-parallax>
+        </video-background>
     </section>
 </template>
   
 <script>
+import Vue from 'vue'
+import VideoBackground from 'vue-responsive-video-background-player'
+Vue.component('video-background', VideoBackground);
 export default {
     name: "ChurchBannerComp",
-    watch: {
-        dialog(value) {
-            if (!value) {
-                this.pause();
-            }
-        },
+    props: {
+        church: {
+            type: Array,
+            required: true,
+            default: () => []
+        }
     },
     methods: {
-        ready(event) {
-            this.player = event.target;
-        },
-        playing(event) {
-            // The player is playing a video.
-        }
     }
 };
 </script>

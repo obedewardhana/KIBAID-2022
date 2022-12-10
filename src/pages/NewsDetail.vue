@@ -1,5 +1,5 @@
 <template>
-  <section id="newsPage">
+  <div id="newsPage">
     <BannerComp title="Renungan Hari Ini" />
     <BreadcrumbComp :list="menu" />
     <section class="pb-10">
@@ -22,7 +22,7 @@
         </v-row>
       </v-container>
     </section>
-  </section>
+  </div>
 </template>
     
 <script>
