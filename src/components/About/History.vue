@@ -11,7 +11,7 @@
                                     SEJARAH KIBAID
                                 </v-card-title>
                                 <v-card-text class="px-0">
-                                    <v-tabs v-model="tab" background-color="secondary" dark>
+                                    <v-tabs v-model="tab" background-color="secondary" :show-arrows="true" dark>
                                         <v-tab v-for="item in items" :key="item.tab">
                                             <p class="text-small text-uppercase white--text mb-0">{{ item.date }}</p>
                                         </v-tab>
@@ -19,8 +19,8 @@
 
                                     <v-tabs-items v-model="tab">
                                         <v-tab-item v-for="item in items" :key="item.tab">
-                                            <v-card color="gray" flat class="py-5 px-5">
-                                                <v-card-text>
+                                            <v-card elevation="0" color="secondary" flat class="pb-5 px-5" tile>
+                                                <v-card-text class="px-5 pb-5 bg--white">
                                                     <p class="text-p primary--text text-justify">{{ item.content }}</p>
                                                 </v-card-text>
                                             </v-card>

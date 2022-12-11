@@ -1,6 +1,6 @@
 <template>
     <section id="">
-        <video-background v-for="(ch, idx) in church" :key="idx" :src="ch.src"
+        <video-background v-for="(ch, idx) in church" :key="idx" :src="ch.src" :poster="ch.poster"
             style="max-height: 450px; height: 100vh;">
             <v-overlay value="true" color="primary" absolute style="z-index:1;">
                 <v-row align="center" justify="center" class="text-center mt-4">
