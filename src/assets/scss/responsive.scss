@@ -10,7 +10,7 @@ Responsive
     .v-card {
       p {
         font-size: 14px;
-        white-space:normal;
+        white-space: normal;
       }
       .feed-control.single {
         height: 180px;
@@ -103,6 +103,11 @@ Responsive
           .v-card__title {
             width: 100%;
           }
+        }
+      }
+      .faith-item {
+        p {
+          font-size:14px;
         }
       }
     }

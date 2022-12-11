@@ -1,6 +1,7 @@
 module.exports = {
   publicPath: '/KIBAID/',
   "transpileDependencies": [
-    "vuetify",
-  ]
+    "vuetify",    
+    process.env.NODE_ENV === "production" ? "/" : "/"
+  ],
 }

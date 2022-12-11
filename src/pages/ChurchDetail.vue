@@ -3,7 +3,8 @@
         <ChurchBannerComp :church="local" />
         <FeedPerCategoryComp :feeds="news" class="pb-8" />
         <FaithSectionComp />
-        <SOKlasisComp :klasis="local" :items="items"/>
+        <SOKlasisComp :klasis="local" :items="items" />
+        <SOChurchComp :locals="local" />
         <DonationSectionComp />
     </div>
 </template>
@@ -21,6 +22,7 @@ export default {
         FaithSectionComp,
         FeedPerCategoryComp,
         SOKlasisComp,
+        SOChurchComp,
         DonationSectionComp
     },
     data: () => ({
@@ -32,7 +34,56 @@ export default {
                 klasis: 'Klasis Jawa & Sumatera',
                 category: 'Gereja',
                 address: '',
-                periode: '2017 - 2022'
+                periode: '2017 - 2022',
+                gembala: [
+                    {
+                        src:  require('@/assets/img/img-usermale.jpg'),
+                        name: 'Your name here',
+                        jabatan: 'Gembala Jemaat I'
+                    },
+                    {
+                        src:  require('@/assets/img/img-usermale.jpg'),
+                        name: 'Your name here',
+                        jabatan: 'Gembala Jemaat II'
+                    },
+                    {
+                        src:  require('@/assets/img/img-usermale.jpg'),
+                        name: 'Your name here',
+                        jabatan: 'Calon Pekerja'
+                    }
+                ],
+                jemaat: [
+                    {
+                        icon: 'mdi-account-multiple',
+                        name: 'Jumlah KK',
+                        amount: '83'
+                    },
+                    {
+                        icon: 'mdi-book-open-page-variant',
+                        name: 'Persekutuan Sekolah Minggu',
+                        amount: '5'
+                    },
+                    {
+                        icon: 'mdi-human-handsup',
+                        name: 'Persekutuan Kaum Muda',
+                        amount: '12'
+                    },
+                    {
+                        icon: 'mdi-human-female',
+                        name: 'Persekutuan Kaum Wanita',
+                        amount: '23'
+                    },
+                    {
+                        icon: 'mdi-human-male',
+                        name: 'Persekutuan Kaum Pria',
+                        amount: '14'
+                    },
+                    {
+                        icon: 'mdi-account-multiple-plus',
+                        name: 'Jumlah Jiwa',
+                        amount: '123'
+                    }
+                ]
             }
         ],
         news: [
@@ -106,7 +157,7 @@ export default {
                 tab: 'Ketua',
                 person: [
                     {
-                        id:'1',
+                        id: '1',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -116,7 +167,7 @@ export default {
                 tab: 'Wakil Ketua',
                 person: [
                     {
-                        id:'2',
+                        id: '2',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -126,7 +177,7 @@ export default {
                 tab: 'Sekretaris',
                 person: [
                     {
-                        id:'3',
+                        id: '3',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -136,7 +187,7 @@ export default {
                 tab: 'Wakil Sekretaris',
                 person: [
                     {
-                        id:'4',
+                        id: '4',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -146,7 +197,7 @@ export default {
                 tab: 'Bendahara',
                 person: [
                     {
-                        id:'5',
+                        id: '5',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -155,7 +206,7 @@ export default {
                 tab: 'Bidang PSM',
                 person: [
                     {
-                        id:'6',
+                        id: '6',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -165,27 +216,27 @@ export default {
                 tab: 'Bidang PKM',
                 person: [
                     {
-                        id:'7',
+                        id: '7',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     },
                     {
-                        id:'7a',
+                        id: '7a',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     },
                     {
-                        id:'7b',
+                        id: '7b',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     },
                     {
-                        id:'7c',
+                        id: '7c',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     },
                     {
-                        id:'7d',
+                        id: '7d',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -195,7 +246,7 @@ export default {
                 tab: 'Bidang PKW',
                 person: [
                     {
-                        id:'8',
+                        id: '8',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -205,7 +256,7 @@ export default {
                 tab: 'Bidang PKP',
                 person: [
                     {
-                        id:'9',
+                        id: '9',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -215,7 +266,7 @@ export default {
                 tab: 'Bidang Penginjilan',
                 person: [
                     {
-                        id:'10',
+                        id: '10',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -225,7 +276,7 @@ export default {
                 tab: 'Bidang Pelayanan Sosial',
                 person: [
                     {
-                        id:'11',
+                        id: '11',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
@@ -235,13 +286,13 @@ export default {
                 tab: 'Bidang Multimedia',
                 person: [
                     {
-                        id:'12',
+                        id: '12',
                         name: 'Your name here',
                         src: require('@/assets/img/img-usermale.jpg')
                     }
                 ]
             }
         ]
-    }),  
+    }),
 }
 </script>
