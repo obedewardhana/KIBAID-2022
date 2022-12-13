@@ -9,7 +9,8 @@
                 <img src="@/assets/img/logo-kibaid.png" alt="Logo" />
               </v-list-item-avatar>
               <v-list-item-content class="d-block" style="flex:unset!important;">
-                <v-list-item-title class="title text-uppercase primary--text font-weight-bold my-0" style="line-height:1.2!important">Sinode <br> Kibaid
+                <v-list-item-title class="title text-uppercase primary--text font-weight-bold my-0"
+                  style="line-height:1.2!important">Sinode <br> Kibaid
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
@@ -24,23 +25,52 @@
           <v-row>
             <div class="primary--text text--uppercase text-h6 pl-4 mb-3">QUICK LINKS</div>
           </v-row>
-          <v-row class="flex-column flex-wrap">
-            <v-btn class="justify-start" text @click="$vuetify.goTo('#hero')">
-              <span class="mr-2 primary--text text-capitalize">Home</span>
-            </v-btn>
-            <v-btn class="justify-start" text @click="$vuetify.goTo('#features')">
-              <span class="mr-2 primary--text text-capitalize">Tentang Kami</span>
-            </v-btn>
-            <v-btn class="justify-start" text @click="$vuetify.goTo('#infographic')">
-              <span class="mr-2 primary--text text-capitalize">Gereja</span>
-            </v-btn>
-            <v-btn class="justify-start" text @click="$vuetify.goTo('#feed')">
-              <span class="mr-2 primary--text text-capitalize">Kabar</span>
-            </v-btn>
-            <v-btn class="justify-start" text @click="$vuetify.goTo('#contact')">
-              <span class="mr-2 primary--text text-capitalize">Kontak</span>
-            </v-btn>
-          </v-row>
+          <template v-if="this.$route.name == '' || this.$route.name == 'Home'">
+            <v-row class="flex-column flex-wrap">
+              <v-btn class="justify-start" text @click="$vuetify.goTo('#hero')">
+                <span class="mr-2 primary--text text-capitalize">Home</span>
+              </v-btn>
+              <v-btn class="justify-start" text @click="$vuetify.goTo('#features')">
+                <span class="mr-2 primary--text text-capitalize">Tentang Kami</span>
+              </v-btn>
+              <v-btn class="justify-start" text @click="$vuetify.goTo('#infographic')">
+                <span class="mr-2 primary--text text-capitalize">Gereja</span>
+              </v-btn>
+              <v-btn class="justify-start" text @click="$vuetify.goTo('#feed')">
+                <span class="mr-2 primary--text text-capitalize">Kabar</span>
+              </v-btn>
+              <v-btn class="justify-start" text href="mailto:admin@sinodekibaid.org">
+                <span class="mr-2 primary--text text-capitalize">Kontak</span>
+              </v-btn>
+            </v-row>
+          </template>
+          <template v-else>
+            <v-row class="flex-column flex-wrap">
+              <v-btn class="justify-start" text>
+                <router-link class="nav-link white--text hover-text" to="/home">
+                  <span class="mr-2 primary--text text-capitalize">Home</span>
+                </router-link>
+              </v-btn>
+              <v-btn class="justify-start" text>
+                <router-link class="nav-link white--text hover-text" to="/about">
+                  <span class="mr-2 primary--text text-capitalize">Tentang Kami</span>
+                </router-link>
+              </v-btn>
+              <v-btn class="justify-start" text>
+                <router-link class="nav-link white--text hover-text" to="/church">
+                  <span class="mr-2 primary--text text-capitalize">Gereja</span>
+                </router-link>
+              </v-btn>
+              <v-btn class="justify-start" text>
+                <router-link class="nav-link white--text hover-text" to="/news">
+                  <span class="mr-2 primary--text text-capitalize">Kabar</span>
+                </router-link>
+              </v-btn>
+              <v-btn class="justify-start" text href="mailto:admin@sinodekibaid.org">
+                <span class="mr-2 primary--text text-capitalize">Kontak</span>
+              </v-btn>
+            </v-row>
+          </template>
         </v-col>
         <v-col cols="12" sm="4" md="4" xl="4" class="order-2 order-sm-3 order-md-3 order-xl-3 mb-8">
           <v-row>

@@ -18,7 +18,7 @@
       <template v-if="this.$route.name == '' || this.$route.name == 'Home'">
         <v-list dense>
           <v-list-item v-for="([icon, text, link], i) in items" :key="i" link @click="$vuetify.goTo(link)">
-            <v-list-item-icon class="justify-center white--text hover-text"  style="margin-right:10px!important">
+            <v-list-item-icon class="justify-center white--text hover-text" style="margin-right:10px!important">
               <v-icon class="white--text hover-text">{{ icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
@@ -28,7 +28,7 @@
             </v-list-item-content>
           </v-list-item>
           <v-list-item href="mailto:admin@sinodekibaid.org">
-            <v-list-item-icon class="justify-center white--text hover-text"  style="margin-right:10px!important">
+            <v-list-item-icon class="justify-center white--text hover-text" style="margin-right:10px!important">
               <v-icon class="white--text hover-text">mdi-email-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
@@ -41,17 +41,15 @@
       </template>
       <template v-else>
         <v-list dense>
-          <v-list-item v-for="([icon, text, link], i) in links" :key="i" link>
-            <router-link class="nav-link white--text hover-text d-flex" :to="link">
-              <v-list-item-icon class="justify-center white--text hover-text" style="margin-right:10px!important">
-                <v-icon class="white--text hover-text">{{ icon }}</v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title class="subtitile-1 white--text hover-text">{{
-                    text
-                }}</v-list-item-title>
-              </v-list-item-content>
-            </router-link>
+          <v-list-item v-for="([icon, text, link], i) in links" :key="i" link  @click="goTo(link)">
+            <v-list-item-icon class="justify-center white--text hover-text" style="margin-right:10px!important">
+              <v-icon class="white--text hover-text">{{ icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title class="subtitile-1 white--text hover-text">{{
+                  text
+              }}</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
           <v-list-item href="mailto:admin@sinodekibaid.org">
             <v-list-item-icon class="justify-center white--text hover-text" style="margin-right:10px!important">
@@ -164,10 +162,10 @@ export default {
       ["mdi-newspaper", "Kabar", "#feed"],
     ],
     links: [
-      ["mdi-home-outline", "Home", "Home"],
-      ["mdi-information-outline", "Tentang Kami", "About"],
-      ["mdi-church-outline", "Gereja", "Church"],
-      ["mdi-newspaper", "Kabar", "News"],
+      ["mdi-home-outline", "Home", "home"],
+      ["mdi-information-outline", "Tentang Kami", "about"],
+      ["mdi-church-outline", "Gereja", "church"],
+      ["mdi-newspaper", "Kabar", "news"],
     ],
   }),
   props: {
@@ -180,6 +178,11 @@ export default {
     },
     checkRoute() {
       console.log(this.$route.name);
+    },
+    goTo(id) {
+      this.$router.push({
+        path: `/${id}`
+      })
     }
   },
 
