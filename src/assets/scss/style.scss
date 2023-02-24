@@ -638,7 +638,23 @@
       }
     }
   }
-
+  .v-btn.brand-name {
+    display: block;
+    text-align: left;
+    height: auto;
+    .v-btn__content {
+      white-space: normal;
+      word-break: break-word;
+      width: 100%;
+      .v-toolbar__title {
+        white-space: normal;
+        line-height: 1;
+        h1 {
+          font-size: 16px !important;
+        }
+      }
+    }
+  }
   .no-hover {
     &:hover {
       &:before {
@@ -711,7 +727,7 @@
       .news-sidebar_inner {
         background-color: var(--v-white-base);
         text-align: center;
-        left:unset!important;
+        left: unset !important;
       }
       &.is-affixed {
         height: 1500px !important;
@@ -738,13 +754,44 @@
           height: 1000px !important;
           // margin-left: 0px;
           top: 0 !important;
-          padding-bottom:90px!important;
+          padding-bottom: 90px !important;
           left: unset !important;
           // right:-10px!important;
           transition: 0.2s ease-in-out;
           -moz-transition: 0.2s ease-in-out;
           -webkit-transition: 0.2s ease-in-out;
         }
+      }
+    }
+    .location-box {
+      .v-btn__content {
+        display: block;
+      }
+    }
+  }
+  .white--text.router-link-exact-active {
+    color: var(--v-bluelighter-base) !important;
+  }
+  .primary--text.router-link-exact-active {
+    color: var(--v-bluelighter-base) !important;
+  }
+  .brand-logo {
+    .v-avatar {
+      width: 70px !important;
+      height: 70px !important;
+      min-width: 70px !important;
+    }
+    .v-list-item__content {
+      display: block !important;
+      flex: unset;
+      white-space: normal;
+      word-break: break-word;
+      width: 80px;
+      .v-list-item__title {
+        display: block !important;
+        font-size: 16px !important;
+        word-wrap: break-word;
+        white-space: normal;
       }
     }
   }
@@ -766,8 +813,31 @@
 /*Footer*/
 
 footer {
+  .brand-logo {
+    .v-avatar {
+      width: 70px !important;
+      height: 70px !important;
+      min-width: 70px !important;
+    }
+    .v-list-item__content {
+      display: block !important;
+      flex: unset;
+      white-space: normal;
+      word-break: break-word;
+      width: 80px;
+      .v-list-item__title {
+        display: block !important;
+        font-size: 16px !important;
+        word-wrap: break-word;
+        white-space: normal;
+      }
+    }
+  }
+
   .v-btn__content {
     letter-spacing: 0;
-    width:100%;
+    width: 100%;
+    display: block;
+    text-align: left;
   }
 }

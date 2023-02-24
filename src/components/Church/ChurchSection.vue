@@ -13,9 +13,9 @@
                             <div class="map-info-header">
                                 <span class="mr-3">Lokasi: </span>
                                 <!-- <h4 class="text-p text-uppercase mb-0 bluesea--text">{{ clickedLocation }}</h4> -->
-                                <v-select v-model="select" class="select-map" @change="onChange($event)" :items="items"
+                                <v-autocomplete v-model="select" class="select-map" @change="onChange($event)" :items="items"
                                     item-text="province" item-value="province" label="Pilih Lokasi"
-                                    single-line></v-select>
+                                    single-line></v-autocomplete>
                             </div>
                             <ul class="map-info-content" id="mapInfo">
                                 <v-overlay :value="overlay" absolute>
@@ -84,7 +84,7 @@ export default {
                     title: 'Gereja KIBAID Jemaat Jakarta',
                     province: 'Jakarta Raya',
                     category: 'Klasis Jawa & Sumatera',
-                    link: '/church/detail'
+                    link: '/jakarta/'
                 },
                 {
                     title: 'Gereja KIBAID Jemaat Cibinong',
@@ -1452,7 +1452,7 @@ export default {
                     title: "Gereja KIBAID Jemaat Paku Makale",
                     province: 'Sulawesi Selatan',
                     category: 'Klasis Makale Utara',
-                    link: '/church/detail'
+                    link: '/paku/'
                 },
                 {
                     title: "Gereja KIBAID Jemaat Panglion",

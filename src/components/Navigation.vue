@@ -3,13 +3,12 @@
 
     <v-navigation-drawer v-model="drawer" app temporary color="secondary">
       <v-list>
-        <v-list-item @click.stop="$router.push('/home').catch(() => { });">
+        <v-list-item @click.stop="$router.push('/home').catch(() => { });" class="brand-logo">
           <v-list-item-avatar>
             <img src="@/assets/img/logo-kibaid.png" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title text-uppercase white--text hover-text">Sinode</v-list-item-title>
-            <v-list-item-title class="title text-uppercase white--text hover-text">Kibaid</v-list-item-title>
+            <v-list-item-title class="title text-uppercase white--text hover-text">Sinode Gereja Kibaid</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -67,18 +66,18 @@
     </v-navigation-drawer>
 
 
-    <v-app-bar app :color="color" :flat="flat" dark class="px-0 px-md-15 px-xl-15" style="" :class="{ expand: flat }">
+    <v-app-bar app :color="color" :flat="flat" dark class="px-0 px-md-15 px-xl-15" style="" :class="{ expand: flat }" height="100">
       <v-container class="px-0 py-0">
         <v-row>
           <v-col cols="12">
             <div class="d-flex align-center">
-              <v-btn :ripple="false" width="140" large depressed link
-                @click.stop="$router.push('/home').catch(() => { });" color="transparent" elevation="0" class="no-hover"
+              <v-btn :ripple="false" width="200" large depressed link
+                @click.stop="$router.push('/home').catch(() => { });" color="transparent" elevation="0" class="no-hover  brand-name"
                 rounded>
-                <v-toolbar-title class="d-flex align-center" style="width:150px">
-                  <v-img src="@/assets/img/logo-kibaid.png" max-width="50px" width="100%" height="100%"
+                <v-toolbar-title class="d-flex align-center" style="width:200px">
+                  <v-img src="@/assets/img/logo-kibaid.png" max-width="70px" width="100%" height="100%"
                     object-fit="contain" class="my-auto mr-3" />
-                  <h1 class="title text-uppercase" style="line-height:1.2!important">Sinode <br>Kibaid</h1>
+                  <h1 class="title text-uppercase" style="line-height:1.2!important">Sinode <br>Gereja Kibaid</h1>
                 </v-toolbar-title>
               </v-btn>
               <v-spacer />
@@ -94,8 +93,13 @@
                   <v-btn class="no-hover" text @click="$vuetify.goTo('#infographic')">
                     <span class="mr-2 hover-text">Gereja</span>
                   </v-btn>
+                  <v-btn class="no-hover" text>
+                    <router-link class="nav-link white--text hover-text" to="/download">
+                      <span class="mr-2">Download</span>
+                    </router-link>
+                  </v-btn>
                   <v-btn class="no-hover" text @click="$vuetify.goTo('#feed')">
-                    <span class="mr-2 hover-text">Kabar</span>
+                    <span class="mr-2 hover-text">informasi</span>
                   </v-btn>
                   <v-btn class="no-hover" rounded outlined text href="mailto:admin@sinodekibaid.org">
                     <span class="mr-2 hover-text">Kontak</span>
@@ -106,7 +110,7 @@
                 <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="mr-4" v-if="isXs" />
                 <div v-else>
                   <v-btn class="no-hover" text>
-                    <router-link class="nav-link white--text hover-text" to="/">
+                    <router-link class="nav-link white--text hover-text" to="/home">
                       <span class="mr-2">Home</span>
                     </router-link>
                   </v-btn>
@@ -121,8 +125,13 @@
                     </router-link>
                   </v-btn>
                   <v-btn class="no-hover" text>
+                    <router-link class="nav-link white--text hover-text" to="/download">
+                      <span class="mr-2">Download</span>
+                    </router-link>
+                  </v-btn>
+                  <v-btn class="no-hover" text>
                     <router-link class="nav-link white--text hover-text" to="/news">
-                      <span class="mr-2">Kabar</span>
+                      <span class="mr-2">informasi</span>
                     </router-link>
                   </v-btn>
                   <v-btn class="no-hover" rounded outlined text href="mailto:admin@sinodekibaid.org">
@@ -159,13 +168,15 @@ export default {
       ["mdi-home-outline", "Home", "#hero"],
       ["mdi-information-outline", "Tentang Kami", "#features"],
       ["mdi-church-outline", "Gereja", "#infographic"],
-      ["mdi-newspaper", "Kabar", "#feed"],
+      ["mdi-download", "Download", "#download"],
+      ["mdi-newspaper", "informasi", "#feed"],
     ],
     links: [
       ["mdi-home-outline", "Home", "home"],
       ["mdi-information-outline", "Tentang Kami", "about"],
       ["mdi-church-outline", "Gereja", "church"],
-      ["mdi-newspaper", "Kabar", "news"],
+      ["mdi-download", "Download", "download"],
+      ["mdi-newspaper", "informasi", "news"],
     ],
   }),
   props: {

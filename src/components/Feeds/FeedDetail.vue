@@ -53,7 +53,7 @@
 
             <v-card :elevation="0" color="transparent" tile class="pb-4">
                 <v-card-title class="text-center text-md-center text-lg-left">
-                    <h3 class="primary--text mb-2">Kabar terkait</h3>
+                    <h3 class="primary--text mb-2">informasi terkait</h3>
                 </v-card-title>
                 <v-card-text>
                     <FeedHorizontalComp :feedspc="news" class="pb-8" />

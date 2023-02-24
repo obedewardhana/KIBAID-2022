@@ -30,7 +30,7 @@ export default {
             {
                 src: require('@/assets/video/bg-yogya.mp4'),
                 poster: require('@/assets/img/img-church1.jpg'),
-                title: 'Gereja KIBAID Jemaat Yogyakarta',
+                title: 'Gereja KIBAID Jemaat Cabang',
                 klasis: 'Klasis Jawa & Sumatera',
                 category: 'Gereja',
                 address: '',

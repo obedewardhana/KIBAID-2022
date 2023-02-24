@@ -1,6 +1,6 @@
 <template>
   <div id="newsPage">
-    <BannerComp title="Kabar" />
+    <BannerComp title="informasi" />
     <BreadcrumbComp :list="menu" />
     <FeedPerCategoryComp :feeds="news" class="pb-8" />
     <section class="pb-10">
@@ -57,7 +57,7 @@ export default {
         link: '/home'
       },
       {
-        label: 'Kabar',
+        label: 'Informasi',
         link: '/news'
       }
     ],
@@ -67,7 +67,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 1',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
       {
@@ -75,7 +75,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 2',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
       {
@@ -83,7 +83,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 3',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
       {
@@ -91,7 +91,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 4',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
       {
@@ -99,7 +99,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 1',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
       {
@@ -107,7 +107,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 2',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
       {
@@ -115,7 +115,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 3',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
       {
@@ -123,7 +123,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. 4',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
     ],
@@ -133,7 +133,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
       {
@@ -141,7 +141,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       },
       {
@@ -149,7 +149,7 @@ export default {
         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
         link: 'news/detail',
         description: 'This is the short description for the card purpose.',
-        category: 'kabar',
+        category: 'informasi',
         date: '22 Agustus 2022'
       }
     ],

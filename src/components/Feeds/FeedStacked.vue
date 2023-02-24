@@ -1,8 +1,8 @@
 <template>
     <v-row>
         <v-col cols="12">
-            <h3 class="primary--text text--h3 px-0 px-sm-8 px-md-8 px-xl-8 text-center text-sm-center text-md-left text-lg-left">
-                KABAR LAINNYA</h3>
+            <h3 class="primary--text text--h3 px-0 px-sm-8 px-md-8 px-xl-8 text-uppercase text-center text-sm-center text-md-left text-lg-left">
+                INFORMASI LAINNYA</h3>
         </v-col>
         <v-col cols="12" sm="12" md="12" xl="12">
             <v-card :elevation="0" color="transparent" tile class="pb-4 px-0 px-sm-8 px-md-8 px-xl-8 mx-5 mx-md-0 mx-lg-0"

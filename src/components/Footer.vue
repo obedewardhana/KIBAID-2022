@@ -4,13 +4,13 @@
       <v-row>
         <v-col cols="10" sm="4" md="4" xl="4" class="py-0 mb-sm-8 order-3 order-sm-1 order-md-1 order-xl-1 mx-auto">
           <v-list color="transparent">
-            <v-list-item class="justify-center justify-md-start justify-xl-start">
+            <v-list-item class="justify-center justify-md-start justify-xl-start brand-logo">
               <v-list-item-avatar>
                 <img src="@/assets/img/logo-kibaid.png" alt="Logo" />
               </v-list-item-avatar>
-              <v-list-item-content class="d-block" style="flex:unset!important;">
+              <v-list-item-content>
                 <v-list-item-title class="title text-uppercase primary--text font-weight-bold my-0"
-                  style="line-height:1.2!important">Sinode <br> Kibaid
+                  style="line-height:1.2!important">Sinode Gereja Kibaid
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
@@ -27,47 +27,47 @@
           </v-row>
           <template v-if="this.$route.name == '' || this.$route.name == 'Home'">
             <v-row class="flex-column flex-wrap">
-              <v-btn class="justify-start" text @click="$vuetify.goTo('#hero')">
+              <v-btn class="justify-start no-hover hover-text" text @click="$vuetify.goTo('#hero')">
                 <span class="mr-2 primary--text text-capitalize">Home</span>
               </v-btn>
-              <v-btn class="justify-start" text @click="$vuetify.goTo('#features')">
+              <v-btn class="justify-start no-hover hover-text" text @click="$vuetify.goTo('#features')">
                 <span class="mr-2 primary--text text-capitalize">Tentang Kami</span>
               </v-btn>
-              <v-btn class="justify-start" text @click="$vuetify.goTo('#infographic')">
+              <v-btn class="justify-start no-hover hover-text" text @click="$vuetify.goTo('#infographic')">
                 <span class="mr-2 primary--text text-capitalize">Gereja</span>
               </v-btn>
-              <v-btn class="justify-start" text @click="$vuetify.goTo('#feed')">
-                <span class="mr-2 primary--text text-capitalize">Kabar</span>
+              <v-btn class="justify-start no-hover hover-text" text @click="$vuetify.goTo('#feed')">
+                <span class="mr-2 primary--text text-capitalize">informasi</span>
               </v-btn>
-              <v-btn class="justify-start" text href="mailto:admin@sinodekibaid.org">
+              <v-btn class="justify-start no-hover hover-text" text href="mailto:admin@sinodekibaid.org">
                 <span class="mr-2 primary--text text-capitalize">Kontak</span>
               </v-btn>
             </v-row>
           </template>
           <template v-else>
             <v-row class="flex-column flex-wrap">
-              <v-btn class="justify-start" text>
-                <router-link class="nav-link white--text hover-text" to="/home">
-                  <span class="mr-2 primary--text text-capitalize">Home</span>
+              <v-btn class="justify-start no-hover " text>
+                <router-link class="nav-link primary--text hover-text" to="/home">
+                  <span class="mr-2 text-capitalize">Home</span>
                 </router-link>
               </v-btn>
-              <v-btn class="justify-start" text>
-                <router-link class="nav-link white--text hover-text" to="/about">
-                  <span class="mr-2 primary--text text-capitalize">Tentang Kami</span>
+              <v-btn class="justify-start no-hover " text>
+                <router-link class="nav-link primary--text hover-text" to="/about">
+                  <span class="mr-2 text-capitalize">Tentang Kami</span>
                 </router-link>
               </v-btn>
-              <v-btn class="justify-start" text>
-                <router-link class="nav-link white--text hover-text" to="/church">
-                  <span class="mr-2 primary--text text-capitalize">Gereja</span>
+              <v-btn class="justify-start no-hover " text>
+                <router-link class="nav-link primary--text hover-text" to="/church">
+                  <span class="mr-2 text-capitalize">Gereja</span>
                 </router-link>
               </v-btn>
-              <v-btn class="justify-start" text>
-                <router-link class="nav-link white--text hover-text" to="/news">
-                  <span class="mr-2 primary--text text-capitalize">Kabar</span>
+              <v-btn class="justify-start no-hover " text>
+                <router-link class="nav-link primary--text hover-text" to="/news">
+                  <span class="mr-2 text-capitalize">informasi</span>
                 </router-link>
               </v-btn>
-              <v-btn class="justify-start" text href="mailto:admin@sinodekibaid.org">
-                <span class="mr-2 primary--text text-capitalize">Kontak</span>
+              <v-btn class="justify-start no-hover " text href="mailto:admin@sinodekibaid.org">
+                <span class="mr-2 text-capitalize">Kontak</span>
               </v-btn>
             </v-row>
           </template>

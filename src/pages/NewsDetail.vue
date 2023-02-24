@@ -54,7 +54,7 @@ export default {
         link: '/news'
       },
       {
-        label: 'Judul kabar',
+        label: 'Judul informasi',
         link: '/news/detail'
       }
     ],

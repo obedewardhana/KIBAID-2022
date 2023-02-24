@@ -1,6 +1,6 @@
 <template>
     <section id="hero">
-        <v-parallax src="@/assets/img/img-pray2.jpg" class="fill-height" height="450">
+        <v-parallax src="@/assets/img/img-pray2.jpg" transition="slide-x-transition" class="fill-height" height="450">
             <v-overlay value="true" color="primary" absolute>
                 <v-row align="center" justify="center" class="text-center mt-lg-10">
                     <v-col cols="12" md="12" xl="12">

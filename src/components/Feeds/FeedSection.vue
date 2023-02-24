@@ -38,7 +38,7 @@
                                         <v-progress-circular indeterminate size="64"></v-progress-circular>
                                     </v-overlay>
                                     <VueSlickCarousel v-bind="settings" @reinit="getFilter" ref="carousel">
-                                        <template v-if="filter == 'Kabar'">
+                                        <template v-if="filter == 'informasi'">
                                             <div class="feed-item overflow-hidden" v-for="(feed, i) in feeds" :key="i">
                                                 <v-overlay value="true" color="primary" absolute>
                                                     <div class="feed-content">
@@ -203,56 +203,56 @@ export default {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
                 link: 'news/detail',
-                category: 'kabar',
+                category: 'informasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
                 link: 'news/detail',
-                category: 'kabar',
+                category: 'informasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
                 link: 'news/detail',
-                category: 'kabar',
+                category: 'informasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
                 link: 'news/detail',
-                category: 'kabar',
+                category: 'informasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 1',
                 link: 'news/detail',
-                category: 'kabar',
+                category: 'informasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship1.jpg'),
                 title: 'judul 2',
                 link: 'news/detail',
-                category: 'kabar',
+                category: 'informasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-worship2.jpg'),
                 title: 'judul 3',
                 link: 'news/detail',
-                category: 'kabar',
+                category: 'informasi',
                 date: '22 Agustus 2022'
             },
             {
                 src: require('@/assets/img/img-pray1.jpg'),
                 title: 'judul 4',
                 link: 'news/detail',
-                category: 'kabar',
+                category: 'informasi',
                 date: '22 Agustus 2022'
             },
         ],
@@ -432,7 +432,7 @@ export default {
         ],
         categories: [
             {
-                title: 'Kabar',
+                title: 'informasi',
                 icon: 'mdi-newspaper'
             },
             {
@@ -448,7 +448,7 @@ export default {
                 icon: 'mdi-download'
             }
         ],
-        filter: 'Kabar',
+        filter: 'informasi',
         isActive: false,
         overlay: false
     }),
